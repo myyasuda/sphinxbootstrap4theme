@@ -5,6 +5,10 @@ Bootstrap v4.0.0alpha.2のSphinx HTMLテーマ
 利用方法
 ========
 
+.. code-block:: bat
+
+   pip install sphinxbootstrap4theme
+
 conf.pyの設定の設定例
 ---------------------
 
