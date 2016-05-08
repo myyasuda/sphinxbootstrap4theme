@@ -1,0 +1,90 @@
+{% extends "basic/layout.html" %}
+
+{% block htmltitle %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{ super() }}
+{% endblock %}
+
+{% set css_files = css_files + [
+    '_static/tether-1.3.1/css/tether.min.css',
+    '_static/bootstrap-4.0.0-alpha2/css/bootstrap.min.css',
+    '_static/sphinxbootstrap4.css'
+] %}
+
+{% set script_files = script_files + [
+    '_static/tether-1.3.1/js/tether.min.js',
+    '_static/bootstrap-4.0.0-alpha2/js/bootstrap.min.js',
+    '_static/sphinxbootstrap4.js'
+  ]
+%}
+
+{% macro navBar() %}
+{% include "navbar.html" %}
+{% endmacro %}
+
+{% macro breadcrumb() %}
+{% include "breadcrumb.html" %}
+{% endmacro %}
+
+{%- block sidebarlogo %}{%- endblock %}
+
+{%- block relbar1 %}{{breadcrumb()}}{% endblock %}
+{%- block relbar2 %}{% endblock %}
+
+{%- block sidebar1 %}{% if theme_show_sidebar %}{{ sidebar() }}{% endif %}{% endblock %}
+{%- block sidebar2 %}{% endblock %}
+{%- block header %}{{ navBar() }}{%- endblock %}
+
+{%- block footer %}
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-center col-md-9 copyright">
+      {%- if show_copyright %}
+        {%- if hasdoc('copyright') %}
+          {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+        {%- else %}
+          {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+        {%- endif %}
+      {%- endif %}
+    </div>
+    <div class="pull-xs-right">
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".accesskey-usage-modal">操作方法</button>
+      <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
+      <div class="modal fade accesskey-usage-modal" tabindex="-1" role="dialog" aria-labelledby="AccessKeyUsageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title">ショートカットキー一覧</h4>
+              </div>
+              <div class="modal-body">
+                  <table class="table table-sm table-bordered table-striped">
+                 <thead class="thead-inverse">
+                     <tr>
+                         <th>ショートカットキー</th>
+                         <th>説明</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>Alt + U</td>
+                         <td>親ページへ移動</td>
+                     </tr>
+                     <tr>
+                         <td>Alt + P</td>
+                         <td>前ページへ移動</td>
+                     </tr>
+                     <tr>
+                         <td>Alt + N</td>
+                         <td>次ページへ移動</td>
+                     </tr>
+                 </tbody>
+             </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{%- endblock %}

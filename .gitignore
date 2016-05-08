@@ -1,0 +1,6 @@
+.gradle/
+.idea/
+*.egg-info/
+dist/
+build/
+example/_build/

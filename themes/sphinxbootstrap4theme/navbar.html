@@ -1,0 +1,39 @@
+  <div id="navbar" class="navbar navbar-fixed-top navbar-{{ theme_navbar_color_class }} bg-{{ theme_navbar_bg_class }}">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+
+          <a class="navbar-brand" href="{{ pathto(master_doc) }}">
+              {%- if logo %}
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
+              {%- else %}
+                  {{ project }}
+              {%- endif %}
+          </a>
+          {%- if version %}
+          <span class="navbar-text pull-xs-left navbar-version"><b>{{version}}</b></span>
+          {%- endif %}
+          {% if theme_navbar_show_pages %}
+          <div class="navbar-dropdown-item">
+              {% set toctree = toctree(maxdepth=4, collapse=False, includehidden=False) %}
+              {{ toctree }}
+          </div>
+          {%- endif -%}
+          <ul class="nav navbar-nav">
+                {%- for title, href, isExternal in theme_navbar_links %}
+                 <li class="nav-item">
+                     {% if isExternal %}
+                     <a  class="nav-link" href="{{ href }}">{{ title }}</a>
+                     {%- else -%}
+                     <a  class="nav-link" href="{{ pathto(href) }}">{{ title }}</a>
+                     {%- endif -%}
+                 </li>
+               {%- endfor %}
+          </ul>
+          {% block navbarsearch %}
+            {% include "navbarsearch.html" %}
+          {% endblock %}
+      </div>
+    </div>
+  </div>
