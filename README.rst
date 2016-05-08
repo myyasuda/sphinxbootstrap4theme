@@ -5,15 +5,16 @@ Bootstrap v4.0.0alpha.2のSphinx HTMLテーマ
 利用方法
 ========
 
-sphinxbootstrap4フォルダをthemeフォルダにコピー
-
 conf.pyの設定の設定例
 ---------------------
 
 .. code-block:: python
 
+   import sphinxbootstrap4theme
+
    # htmlテーマの設定
    html_theme = 'sphinxbootstrap4'
+   html_theme_path = [sphinxbootstrap4theme.get_path()]
 
    # htmlロゴの設定
    # ロゴはnavbarに表示されます。
@@ -81,6 +82,13 @@ conf.pyの設定の設定例
 .. code-block:: bat
 
    gradlew buildPackage
+
+テーマをインストール
+------------------------------
+
+.. code-block:: bat
+
+   gradlew installPackage
 
 PyPIにテーマを登録
 ------------------
