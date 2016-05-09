@@ -8,7 +8,7 @@
 
 .. code-block:: bat
 
-   pip install sphinxbootstrap4
+   pip install sphinxbootstrap4theme
 
 
 conf.pyの設定
@@ -16,7 +16,7 @@ conf.pyの設定
 
 .. code-block:: python
 
-   import sphinxbootstrap4
+   import sphinxbootstrap4theme
 
-   html_theme = 'sphinxbootstrap4'
+   html_theme = 'sphinxbootstrap4theme'
    html_theme_path = [sphinxbootstrap4theme.get_path()]

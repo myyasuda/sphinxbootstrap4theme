@@ -17,7 +17,7 @@ conf.pyの設定の設定例
    import sphinxbootstrap4theme
 
    # htmlテーマの設定
-   html_theme = 'sphinxbootstrap4'
+   html_theme = 'sphinxbootstrap4theme'
    html_theme_path = [sphinxbootstrap4theme.get_path()]
 
    # htmlロゴの設定
