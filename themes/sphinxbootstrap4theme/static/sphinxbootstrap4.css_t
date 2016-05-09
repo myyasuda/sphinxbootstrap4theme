@@ -152,10 +152,17 @@ div.sphinxsidebar {
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
+    {% if theme_sidebar_right %}
+	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
+    -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
+    -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
+    -ms-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
+    {% else %}
 	-moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
     -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
     -o-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
     -ms-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
+    {% endif %}
 }
 
 div.sphinxsidebar.bg-secondary {
@@ -251,7 +258,18 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     {% endif %}
 }
 
-
+{% if theme_sidebar_right %}
+.sidebartoctree li > a.current::before {
+    content: "";
+    display: inline-block;
+    border: 8px solid transparent;
+    border-left-color: white;
+    float: left;
+    margin-top: 6px;
+    position: absolute;
+    left: 0px;
+}
+{% else %}
 .sidebartoctree li > a.current::after {
     content: "";
     display: inline-block;
@@ -262,6 +280,7 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     position: absolute;
     right: 0px;
 }
+{% endif %}
 
 /*
 Footer styles

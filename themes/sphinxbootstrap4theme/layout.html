@@ -32,8 +32,9 @@
 {%- block relbar1 %}{{breadcrumb()}}{% endblock %}
 {%- block relbar2 %}{% endblock %}
 
-{%- block sidebar1 %}{% if theme_show_sidebar %}{{ sidebar() }}{% endif %}{% endblock %}
-{%- block sidebar2 %}{% endblock %}
+{%- block sidebar1 %}{% if theme_show_sidebar and not theme_sidebar_right %}{{ sidebar() }}{% endif %}{% endblock %}
+{%- block sidebar2 %}{% if theme_show_sidebar and theme_sidebar_right %}</div>{{ sidebar() }}{% endif %}{% endblock %}
+
 {%- block header %}{{ navBar() }}{%- endblock %}
 
 {%- block footer %}

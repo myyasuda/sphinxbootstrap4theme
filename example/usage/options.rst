@@ -31,6 +31,11 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
        # sidebarを表示するかどうか指定します。
        'show_sidebar' : True,
 
+       # sidebarを右に表示します。
+       # Falseの場合、左に表示します。
+       # 設定値：True, False (Default: False)
+       'sidebar_right': False,
+
        # navbarの文字色のクラスを指定します。
        # dark, light
        'sidebar_color_class': 'dark',

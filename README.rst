@@ -54,6 +54,11 @@ conf.pyの設定の設定例
        # 設定値：True, Flase (Default: True)
        'show_sidebar' : True,
 
+       # sidebarを右に表示します。
+       # Falseの場合、左に表示します。
+       # 設定値：True, False (Default: False)
+       'sidebar_right': False,
+
        # navbarの文字色のクラスを指定します。
        # 設定値：'dark', 'light' (Default: 'dark')
        'sidebar_color_class': 'dark',

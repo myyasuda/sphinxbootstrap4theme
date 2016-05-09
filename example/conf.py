@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-\
 
-import sphinxbootstrap4theme
-
 source_suffix = '.rst'
 master_doc = 'index'
 
@@ -18,7 +16,7 @@ html_sidebars = {'**' : ['globaltoc.html']}
 
 html_theme = 'sphinxbootstrap4theme'
 
-html_theme_path = [sphinxbootstrap4theme.get_path()]
+html_theme_path = ['../themes']
 
 html_theme_options = {
     'navbar_color_class': 'dark',
@@ -29,6 +27,7 @@ html_theme_options = {
         ("Link", "http://example.com", True)
     ],
     'show_sidebar' : True,
+    'sidebar_right': False,
     'sidebar_color_class': 'dark',
     'sidebar_bg_class' : 'inverse',
     'table_thead_class' : 'inverse'
