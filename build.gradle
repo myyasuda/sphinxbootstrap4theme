@@ -27,7 +27,7 @@ task cleanExample(type: Delete) {
 
 task example(dependsOn:'cleanExample', type:Exec) {
     executable "sphinx-build"
-    args "-b", "html", "./example", "./example/_build", "-c", "./example", "-A", "version=${version}"
+    args "-b", "html", "./example", "./example/_build", "-c", "./example"
 }
 
 task wrapper(type: Wrapper) {
