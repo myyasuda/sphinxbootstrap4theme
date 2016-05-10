@@ -12,7 +12,6 @@ author = 'Masahiko Yasuda'
 
 language = 'ja'
 
-html_static_path = ['_static']
 templates_path = ['_templates']
 
 html_sidebars = {'**' : ['globaltoc.html']}
