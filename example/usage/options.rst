@@ -7,6 +7,9 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
 .. code-block:: python
 
    html_theme_options = {
+       # navbarのスタイルを指定します。
+       # 設定値：'fixed-top', 'full' (Default: 'fixed-top')
+       'navbar_style' : 'fixed-top',
 
        # navbarの文字色のクラスを指定します。
        # dark, light

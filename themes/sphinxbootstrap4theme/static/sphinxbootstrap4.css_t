@@ -308,7 +308,9 @@ Breadcrumb styles
 */
 
 .related {
+    {% if theme_navbar_style != "full" %}
     padding: 54px 0px 0px 0px;
+    {% endif %}
     background-color: #eceeef;
 }
 

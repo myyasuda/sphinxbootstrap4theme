@@ -30,6 +30,10 @@ conf.pyの設定の設定例
 
    html_theme_options = {
 
+       # navbarのスタイルを指定します。
+       # 設定値：'fixed-top', 'full' (Default: 'fixed-top')
+       'navbar_style' : 'fixed-top',
+
        # navbarの文字色のクラスを指定します。
        # 設定値：'dark', 'light' (Default: 'dark')
        'navbar_color_class' : 'dark',
