@@ -4,7 +4,7 @@
 source_suffix = '.rst'
 master_doc = 'index'
 
-version = "0.0.2"
+version = "0.0.3"
 
 project = 'Bootstrap4 theme'
 copyright = '2016, Masahiko Yasuda'
@@ -30,6 +30,7 @@ html_theme_options = {
     ],
     'show_sidebar' : True,
     'sidebar_right': False,
+    'sidebar_fixed': True,
     'sidebar_color_class': 'dark',
     'sidebar_bg_class' : 'inverse',
     'table_thead_class' : 'inverse',

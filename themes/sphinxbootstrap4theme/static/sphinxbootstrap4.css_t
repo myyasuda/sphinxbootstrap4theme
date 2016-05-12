@@ -175,6 +175,12 @@ div.sphinxsidebar > div.sphinxsidebarwrapper {
     padding-right: 0px;
 }
 
+div.sphinxsidebar > div.sphinxsidebarwrapper.is-fixed {
+    position: fixed;
+    width: inherit;
+}
+
+
 div.sphinxsidebar > div.sphinxsidebarwrapper h3 {
     padding: 10px 0px 0px 10px;
 }

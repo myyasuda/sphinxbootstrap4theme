@@ -39,6 +39,10 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
        # 設定値：True, False (Default: False)
        'sidebar_right': False,
 
+       # sidebarを固定します。
+       # 設定値：True, False (Default: True)
+       'sidebar_fixed': True,
+
        # navbarの文字色のクラスを指定します。
        # dark, light
        'sidebar_color_class': 'dark',

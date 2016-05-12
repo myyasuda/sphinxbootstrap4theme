@@ -6,6 +6,7 @@ $(window).on('load resize', function(){
     );
     $('.document').height(m);
     $('.sphinxsidebar').height(m);
+
 });
 
 $(function() {
@@ -49,4 +50,39 @@ $(function() {
 
     // images
     $("img").addClass("img-fluid");
+
 });
+
+{% if theme_sidebar_fixed %}
+$(window).load(function(){
+
+  var navbar_height = 54;
+
+  // サイドバーの固定するレイヤー
+  var navi = $('.sphinxsidebarwrapper');
+  // メインのレイヤー
+  var main  = $('.document');
+
+  console.log(navi.offset());
+  // 固定するレイヤーの初期位置
+  var target_top = navi.offset().top - parseInt(navi.css('margin-top'),10);
+  // メインレイヤーの初期位置
+  var sub_top = main.offset().top - parseInt(main.css('margin-top'),10);
+  // スクロールする上限
+  var sub_scroll = main.offset().top + main.outerHeight(true) - navi.outerHeight(true) - parseInt(navi.css('margin-top'),10);
+
+  if (navi.outerHeight(true) + target_top < main.outerHeight(true) + sub_top) {
+    $(window).scroll(function () {
+      var ws = $(window).scrollTop() + navbar_height;
+      $('.scroll').text(ws);
+      if (ws > sub_scroll) {
+        navi.css({position:'fixed', top: sub_scroll - ws + 'px', width: 'inherit'});
+      } else if(ws > target_top) {
+        navi.css({position:'fixed', top: navbar_height +'px', width: 'inherit'});
+      } else {
+        navi.css({position:'relative', top:  '0px', width: ''});
+      }
+    });
+  }
+});
+{% endif %}
