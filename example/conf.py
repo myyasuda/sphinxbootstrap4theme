@@ -32,7 +32,8 @@ html_theme_options = {
     'sidebar_right': False,
     'sidebar_color_class': 'dark',
     'sidebar_bg_class' : 'inverse',
-    'table_thead_class' : 'inverse'
+    'table_thead_class' : 'inverse',
+    'show_shortcut_list_btn' : True
 }
 
 rst_prolog= u"""

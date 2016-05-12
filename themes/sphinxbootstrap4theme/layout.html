@@ -50,8 +50,8 @@
       {%- endif %}
     </div>
     <div class="pull-xs-right">
+      {%- if theme_show_shortcut_list_btn == True %}
       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".accesskey-usage-modal">操作方法</button>
-      <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
       <div class="modal fade accesskey-usage-modal" tabindex="-1" role="dialog" aria-labelledby="AccessKeyUsageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
@@ -85,6 +85,8 @@
           </div>
         </div>
       </div>
+      {%- endif %}
+        <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
     </div>
   </div>
 </footer>

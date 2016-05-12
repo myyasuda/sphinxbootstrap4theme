@@ -49,5 +49,9 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
 
        # テーブルのヘッダーのスタイルのクラスを指定します。
        # 'inverse', 'light', ''
-       'table_thead_class' : 'inverse'
+       'table_thead_class' : 'inverse',
+
+       # フッターにショートカットキーの一覧表示用のボタンを表示するかどうか指定します。
+       # 設定値：True, False (Default: False)
+       'show_shortcut_list_btn' : False
    }
