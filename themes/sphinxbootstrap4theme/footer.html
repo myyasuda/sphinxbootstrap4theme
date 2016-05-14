@@ -1,0 +1,58 @@
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        <div>{% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}</div>
+      {%- else %}
+        <div>{% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}</div>
+      {%- endif %}
+    {%- endif %}
+    {%- if last_updated %}
+      <div>{% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}</div>
+    {%- endif %}
+    {%- if show_sphinx %}
+      <div>{% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}</div>
+    {%- endif %}
+    </div>
+    <div class="pull-xs-right">
+      {%- if theme_show_shortcut_list_btn == True %}
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".accesskey-usage-modal">操作方法</button>
+      <div class="modal fade accesskey-usage-modal" tabindex="-1" role="dialog" aria-labelledby="AccessKeyUsageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title">ショートカットキー一覧</h4>
+              </div>
+              <div class="modal-body">
+                  <table class="table table-sm table-bordered table-striped">
+                 <thead class="thead-inverse">
+                     <tr>
+                         <th>ショートカットキー</th>
+                         <th>説明</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>Alt + U</td>
+                         <td>親ページへ移動</td>
+                     </tr>
+                     <tr>
+                         <td>Alt + P</td>
+                         <td>前ページへ移動</td>
+                     </tr>
+                     <tr>
+                         <td>Alt + N</td>
+                         <td>次ページへ移動</td>
+                     </tr>
+                 </tbody>
+             </table>
+              </div>
+          </div>
+        </div>
+      </div>
+      {%- endif %}
+        <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
+    </div>
+  </div>
+</footer>

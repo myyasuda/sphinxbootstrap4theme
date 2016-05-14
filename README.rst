@@ -39,7 +39,7 @@ conf.pyの設定の設定例
        'navbar_color_class' : 'dark',
 
        # navbarの背景色のクラスを指定します。
-       # 設定値：'inverse', 'primary', 'secondary', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
+       # 設定値：'inverse', 'primary', 'faded', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
        'navbar_bg_class' : 'inverse',
 
        # navbarにドキュメントのtoctreeを表示するかどうか指定します。
@@ -75,7 +75,7 @@ conf.pyの設定の設定例
        'sidebar_color_class': 'dark',
 
        # sidebarの背景色のクラスを指定します。
-       # 設定値：'inverse', 'primary', 'secondary', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
+       # 設定値：'inverse', 'primary', 'faded', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
        'sidebar_bg_class' : 'inverse',
 
        # テーブルのヘッダーのスタイルのクラスを指定します。

@@ -16,7 +16,7 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
        'navbar_color_class' : 'dark',
 
        # navbarの背景色のクラスを指定します。
-       # inverse, primary, secondary, success, info, warning, danger
+       # inverse, primary, faded, success, info, warning, danger
        'navbar_bg_class' : 'inverse',
 
        # navbarにドキュメントのtoctreeを表示するかどうか指定します。
@@ -45,11 +45,11 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
 
        # navbarの文字色のクラスを指定します。
        # dark, light
-       'sidebar_color_class': 'dark',
+       'sidebar_color_class': 'light',
 
        # sidebarの背景色のクラスを指定します。
-       # inverse, primary, secondary, success, info, warning, danger
-       'sidebar_bg_class' : 'inverse',
+       # inverse, primary, faded, success, info, warning, danger
+       'sidebar_bg_class' : 'faded',
 
        # テーブルのヘッダーのスタイルのクラスを指定します。
        # 'inverse', 'light', ''

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'sphinxbootstrap4theme',
-    version = '0.0.3',
+    version = '0.1.0',
     author = 'Masahiko Yasuda',
     author_email= 'myasuda@uchida.co.jp',
     url="https://github.com/myyasuda/sphinxbootstrap4theme",
@@ -21,7 +21,7 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Topic :: Internet",
-        "Topic :: Software Development :: Documentation",
+        "Topic :: Software Development :: Documentation"
     ],
 )
 

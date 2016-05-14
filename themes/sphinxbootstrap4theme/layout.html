@@ -23,6 +23,37 @@
   ]
 %}
 
+{%- macro sphinxsidebar() %}
+      {%- if render_sidebar %}
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+          {%- block sidebarlogo %}{%- endblock %}
+          {%- if sidebars != None %}
+            {#- new style sidebar: explicitly include/exclude templates #}
+            {%- for sidebartemplate in sidebars %}
+            {%- include sidebartemplate %}
+            {%- endfor %}
+          {%- else %}
+            {#- old style sidebars: using blocks -- should be deprecated #}
+            {%- block sidebartoc %}
+            {%- include "globaltoc.html" %}
+            {%- endblock %}
+            {%- block sidebarrel %}{%- endblock %}
+            {%- if customsidebar %}
+            {%- include customsidebar %}
+            {%- endif %}
+            {%- block sidebarsearch %}
+            {%- include "searchbox.html" %}
+            {%- endblock %}
+            {%- block sidebarsourcelink %}
+            {%- include "sourcelink.html" %}
+            {%- endblock %}
+          {%- endif %}
+        </div>
+      </div>
+      {%- endif %}
+{%- endmacro %}
+
 {% macro navBar() %}
 {% include "navbar.html" %}
 {% endmacro %}
@@ -31,67 +62,39 @@
 {% include "breadcrumb.html" %}
 {% endmacro %}
 
-{%- block sidebarlogo %}{%- endblock %}
-
-{%- block relbar1 %}{{breadcrumb()}}{% endblock %}
+{%- block relbar1 %}{% endblock %}
 {%- block relbar2 %}{% endblock %}
-
-{%- block sidebar1 %}{% if theme_show_sidebar and not theme_sidebar_right %}{{ sidebar() }}{% endif %}{% endblock %}
-{%- block sidebar2 %}{% if theme_show_sidebar and theme_sidebar_right %}</div>{{ sidebar() }}{% endif %}{% endblock %}
 
 {%- block header %}{{ navBar() }}{%- endblock %}
 
+
 {%- block footer %}
-<footer class="footer">
-  <div class="container-fluid">
-    <div class="text-xs-center col-md-9 copyright">
-      {%- if show_copyright %}
-        {%- if hasdoc('copyright') %}
-          {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-        {%- else %}
-          {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-        {%- endif %}
+{% include "footer.html" %}
+{%- endblock %}
+
+{%- block content %}
+  <div class="main">
+  {%- block sidebar1 %} {% if theme_show_sidebar and not theme_sidebar_right %}{{ sphinxsidebar() }}{% endif %} {% endblock %}
+
+    <div class="document">
+    {%- block breadcrumb1 %}{{breadcrumb()}}{% endblock %}
+    {%- block document %}
+      <div class="documentwrapper">
+      {%- if render_sidebar %}
+        <div class="bodywrapper">
       {%- endif %}
-    </div>
-    <div class="pull-xs-right">
-      {%- if theme_show_shortcut_list_btn == True %}
-      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".accesskey-usage-modal">操作方法</button>
-      <div class="modal fade accesskey-usage-modal" tabindex="-1" role="dialog" aria-labelledby="AccessKeyUsageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4 class="modal-title">ショートカットキー一覧</h4>
-              </div>
-              <div class="modal-body">
-                  <table class="table table-sm table-bordered table-striped">
-                 <thead class="thead-inverse">
-                     <tr>
-                         <th>ショートカットキー</th>
-                         <th>説明</th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <tr>
-                         <td>Alt + U</td>
-                         <td>親ページへ移動</td>
-                     </tr>
-                     <tr>
-                         <td>Alt + P</td>
-                         <td>前ページへ移動</td>
-                     </tr>
-                     <tr>
-                         <td>Alt + N</td>
-                         <td>次ページへ移動</td>
-                     </tr>
-                 </tbody>
-             </table>
-              </div>
+          <div class="body">
+            {% block body %} {% endblock %}
           </div>
+      {%- if render_sidebar %}
         </div>
-      </div>
       {%- endif %}
-        <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
+      </div>
+  {%- endblock %}
+    </div>
+
+  {%- block sidebar2 %}{% if theme_show_sidebar and theme_sidebar_right %}</div>{{ sphinxsidebar() }}{% endif %}{% endblock %}
+      <div class="clearer"></div>
     </div>
   </div>
-</footer>
 {%- endblock %}

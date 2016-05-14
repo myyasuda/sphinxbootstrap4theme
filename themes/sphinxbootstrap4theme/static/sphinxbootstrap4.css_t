@@ -3,7 +3,9 @@ Base styles
 */
 
 body {
-    font-size: 14px;
+    display: none;
+    font-size: 0.875em;
+    font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
 
 /*
@@ -20,11 +22,32 @@ a {
     margin: 7px 0px 7px 0px;
 }
 
+.main {
+    {% if theme_navbar_style != "full" %}
+    margin-top: 54px;
+    {% endif %}
+}
+
 /*
 Document Class styles
 */
 
 div.document {
+    {% if theme_sidebar_right %}
+	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -ms-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    z-index: 1;
+    {% else %}
+	-moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -o-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    -ms-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
+    {% endif %}
+}
+
+div.documentwrapper{
     padding: 0px 25px 0px 50px;
 }
 
@@ -62,10 +85,6 @@ Navbar Class styles
 .navbar-version {
     padding-top: 10px;
     margin-right: 30px;
-}
-
-div.navbar.bg-secondary {
-    background-color: rgb(236, 238, 239);
 }
 
 .navbar .navbar-brand {
@@ -144,6 +163,10 @@ div.navbar.bg-secondary {
 Sidebar styles
 */
 
+#searchbox {
+    margin: 40px 20px 10px 20px;
+}
+
 div.sphinxsidebar {
     margin-left: 0px;
     padding: 0px;
@@ -152,27 +175,13 @@ div.sphinxsidebar {
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
-    {% if theme_sidebar_right %}
-	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -ms-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    {% else %}
-	-moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -o-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    -ms-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.4) inset;
-    {% endif %}
-}
-
-div.sphinxsidebar.bg-secondary {
-    background-color: rgb(236, 238, 239);
 }
 
 div.sphinxsidebar > div.sphinxsidebarwrapper {
     display: block;
     padding-left: 0px;
     padding-right: 0px;
+    z-index: 1;
 }
 
 div.sphinxsidebar > div.sphinxsidebarwrapper.is-fixed {
@@ -182,11 +191,11 @@ div.sphinxsidebar > div.sphinxsidebarwrapper.is-fixed {
 
 
 div.sphinxsidebar > div.sphinxsidebarwrapper h3 {
-    padding: 10px 0px 0px 10px;
+    padding: 12px 0px 0px 10px;
 }
 
 div.sphinxsidebar > div.sphinxsidebarwrapper h4 {
-    padding: 10px 0px 0px 10px;
+    padding: 20px 0px 0px 10px;
 }
 div.sphinxsidebar > div.sphinxsidebarwrapper p.topless {
     padding: 10px 0px 0px 10px;
@@ -274,6 +283,7 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     margin-top: 6px;
     position: absolute;
     left: 0px;
+    z-index: 1;
 }
 {% else %}
 .sidebartoctree li > a.current::after {
@@ -285,9 +295,9 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     margin-top: 6px;
     position: absolute;
     right: 0px;
+    z-index: 1;
 }
 {% endif %}
-
 /*
 Footer styles
 */
@@ -314,21 +324,16 @@ Breadcrumb styles
 */
 
 .related {
-    {% if theme_navbar_style != "full" %}
-    padding: 54px 0px 0px 0px;
-    {% endif %}
-    background-color: #eceeef;
-}
-
-.related .relation {
-    padding: 8px 16px 8px 16px;
+    left: -15px;
+    width: calc( 100% + 30px );
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .breadcrumb {
-    padding: .5rem 1rem;
-    border-radius: 0;
-    margin-bottom: 0px;
-    margin-top: 5px;
+    padding: 6px 0px 0px 0px;
+    margin: 0px;
+    background-color: inherit;
 }
 
 /*
