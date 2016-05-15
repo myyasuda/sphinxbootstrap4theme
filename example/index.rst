@@ -12,8 +12,8 @@ Contents
 .. toctree::
    :maxdepth: 3
 
-   usage/index
-   examples/index
+   gettingstarted
+   examples
 
 開発関連のTipsやTODOリスト
 

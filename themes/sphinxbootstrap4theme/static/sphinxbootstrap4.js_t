@@ -52,6 +52,12 @@ $(function() {
     // images
     $("img").addClass("img-fluid");
 
+    // blockquote
+    $("blockquote").addClass("blockquote");
+
+    // download
+    $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
+
      {% if theme_sidebar_fixed %}
     $(window).load(function(){
       {% if theme_navbar_style == "fixed-top" %}
