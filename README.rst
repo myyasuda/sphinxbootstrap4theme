@@ -71,12 +71,12 @@ conf.pyの設定の設定例
        'sidebar_fixed': True,
 
        # navbarの文字色のクラスを指定します。
-       # 設定値：'dark', 'light' (Default: 'dark')
-       'sidebar_color_class': 'dark',
+       # 設定値：'dark', 'light' (Default: 'light')
+       'sidebar_color_class': 'light',
 
        # sidebarの背景色のクラスを指定します。
-       # 設定値：'inverse', 'primary', 'faded', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
-       'sidebar_bg_class' : 'inverse',
+       # 設定値：'inverse', 'primary', 'faded', 'success', 'info', 'warning', 'danger' (Default: 'faded')
+       'sidebar_bg_class' : 'faded',
 
        # テーブルのヘッダーのスタイルのクラスを指定します。
        # 設定値：'inverse', 'light', '' (Default: 'inverse')
