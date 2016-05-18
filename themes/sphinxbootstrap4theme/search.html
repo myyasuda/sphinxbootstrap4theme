@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "!layout.html" %}
 {% set title = _('Search') %}
 {% set script_files = script_files + ['_static/searchtools.js'] %}
 {% block extrahead %}
@@ -22,7 +22,7 @@
     function will automatically search for all of the words. Pages
     containing fewer words won't appear in the result list.{% endtrans %}
   </p>
-  <form action="" method="get"  class="form-inline">
+  <form action="" method="get" class="form-inline">
     <input type="text" class="form-control" name="q" value="" />
     <button type="submit" class="btn btn-primary btn-sm">{{ _('search') }}</button>
     <span id="search-progress" style="padding-left: 10px"></span>
@@ -35,12 +35,13 @@
   {% endif %}
   <div id="search-results">
   {% if search_results %}
+    <ul>
     {% for href, caption, context in search_results %}
-      <div class="card card-block">
-        <h4 class="card-title"><a href="{{ pathto(item.href) }}">{{ caption }}</a></h4>
-        <p class="context card-text">{{ context|e }}</p>
-      </div>
+      <li><a href="{{ pathto(item.href) }}">{{ caption }}</a>
+        <div class="context">{{ context|e }}</div>
+      </li>
     {% endfor %}
+    </ul>
   {% endif %}
   </div>
 {% endblock %}

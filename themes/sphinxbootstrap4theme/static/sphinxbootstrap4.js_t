@@ -70,7 +70,6 @@ $(function() {
       // メインのレイヤー
       var main  = $('.document');
 
-      console.log(navi.offset());
       // 固定するレイヤーの初期位置
       var target_top = navi.offset().top - parseInt(navi.css('margin-top'),10);
       // メインレイヤーの初期位置
