@@ -284,6 +284,15 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     {% endif %}
 }
 
+div.sphinxsidebar > div.sphinxsidebarwrapper > p.topless {
+    padding: 0px;
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper > p.topless > a {
+    padding-left: 1em;
+    font-size: 16px;
+}
+
 {% if theme_sidebar_right|tobool %}
 .sidebartoctree li > a.current::before {
     content: "";

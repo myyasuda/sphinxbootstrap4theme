@@ -39,12 +39,17 @@
             {%- block sidebartoc %}
             {%- include "globaltoc.html" %}
             {%- endblock %}
-            {%- block sidebarrel %}{%- endblock %}
+            {%- block sidebarrel %}
+            {%- include "relations.html" %}
+            {%- endblock %}
             {%- if customsidebar %}
             {%- include customsidebar %}
             {%- endif %}
             {%- block sidebarsearch %}
             {%- include "searchbox.html" %}
+            {%- endblock %}
+            {%- block sidebarsourcelink %}
+            {%- include "sourcelink.html" %}
             {%- endblock %}
           {%- endif %}
         </div>
