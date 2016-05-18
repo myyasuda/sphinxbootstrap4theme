@@ -33,7 +33,7 @@ Document Class styles
 */
 
 div.document {
-    {% if theme_sidebar_right %}
+    {% if theme_sidebar_right|tobool %}
 	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
@@ -284,7 +284,7 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.current {
     {% endif %}
 }
 
-{% if theme_sidebar_right %}
+{% if theme_sidebar_right|tobool %}
 .sidebartoctree li > a.current::before {
     content: "";
     display: inline-block;

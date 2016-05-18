@@ -21,20 +21,10 @@ html_theme = 'sphinxbootstrap4theme'
 html_theme_path = ['../themes']
 
 html_theme_options = {
-    'navbar_style' : 'fixed-top',
-    'navbar_color_class': 'dark',
-    'navbar_bg_class' : 'inverse',
-    'navbar_show_pages' : True,
     'navbar_links' : [
         ('Home', 'index', False),
         ("Link", "http://example.com", True)
     ],
-    'show_sidebar' : True,
-    'sidebar_right': False,
-    'sidebar_fixed': True,
-    'sidebar_color_class': 'light',
-    'sidebar_bg_class' : 'faded',
-    'table_thead_class' : 'inverse',
     'show_shortcut_list_btn' : True
 }
 

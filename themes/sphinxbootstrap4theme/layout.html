@@ -72,7 +72,7 @@
 
 {%- block content %}
   <div class="main">
-  {%- block sidebar1 %} {% if theme_show_sidebar and not theme_sidebar_right %}{{ sphinxsidebar() }}{% endif %} {% endblock %}
+  {%- block sidebar1 %} {% if theme_show_sidebar|tobool and not theme_sidebar_right|tobool %}{{ sphinxsidebar() }}{% endif %} {% endblock %}
 
     <div class="document">
     {%- block breadcrumb1 %}{{breadcrumb()}}{% endblock %}
@@ -91,7 +91,7 @@
   {%- endblock %}
     </div>
 
-  {%- block sidebar2 %}{% if theme_show_sidebar and theme_sidebar_right %}</div>{{ sphinxsidebar() }}{% endif %}{% endblock %}
+  {%- block sidebar2 %}{% if theme_show_sidebar|tobool and theme_sidebar_right|tobool %}</div>{{ sphinxsidebar() }}{% endif %}{% endblock %}
       <div class="clearer"></div>
     </div>
   </div>
