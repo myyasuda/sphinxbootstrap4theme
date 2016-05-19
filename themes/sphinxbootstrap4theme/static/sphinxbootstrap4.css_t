@@ -34,12 +34,14 @@ Document Class styles
 
 div.document {
     {% if theme_sidebar_right|tobool %}
+    box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
 	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -ms-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     z-index: 1;
     {% else %}
+    box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
 	-moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -o-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
@@ -89,6 +91,7 @@ Navbar Class styles
 */
 
 .navbar {
+    box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
 	-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
     -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4);
     -o-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
@@ -372,7 +375,7 @@ Code-block style
 
 /* Table */
 .table {
-    width: 0%;
+    width: auto;
 }
 
 tr.row-odd {
