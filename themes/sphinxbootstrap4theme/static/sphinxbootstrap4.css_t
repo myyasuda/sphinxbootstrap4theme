@@ -372,12 +372,21 @@ div.alert-warning > p.admonition-title > div.icon {
 }
 
 div.alert-warning > p.admonition-title > div.icon > div.check-mark:before  {
+    content: "";
     color: rgb(252, 248, 227);
-    content: "i";
-    font-size: 25px;
-    position: relative;
-    left: 9px;
-    top: -5px;
+    border: solid rgb(252, 248, 227);
+    border-width: 4px 4px 0px 0px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    left: 10px;
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    top: 6px;
+    left: 6px;
 }
 
 div.alert-success > p.admonition-title > div.icon {
