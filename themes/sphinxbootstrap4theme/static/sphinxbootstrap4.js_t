@@ -1,15 +1,54 @@
-$(function() {
-    $('body').fadeIn(0);
-    $(window).on('load resize', function(){
-        var m = Math.max(
-            $('.document').height(),
-            $('.sphinxsidebar').height(),
-            $(window).height() - $('.footer').outerHeight()  - $('#navbar').outerHeight()
-        );
-        $('.document').height(m);
-        $('.sphinxsidebar').height(m);
+function adjustHeight() {
+    var m = Math.max(
+        $('.body').height() + $('#navbar').outerHeight(),
+        $('.document').height(),
+        $('.sphinxsidebar').height(),
+        $(window).height() - $('.footer').outerHeight()  - $('#navbar').outerHeight()
+    );
+    $('.document').height(m);
+    $('.sphinxsidebar').height(m);
+    console.log('adjustHeight');
+}
 
-    });
+{% if theme_sidebar_fixed %}
+function stickySidebar() {
+    {% if theme_navbar_style == "fixed-top" %}
+    var navbar_height = $('.navbar').outerHeight(true);
+    {% else %}
+    var navbar_height = 0;
+    {% endif %}
+
+    // サイドバーの固定するレイヤー
+    var navi = $('.sphinxsidebarwrapper');
+    // メインのレイヤー
+    var main  = $('.document');
+
+    // 固定するレイヤーの初期位置
+    var target_top = navi.offset().top - parseInt(navi.css('margin-top'),10);
+    // メインレイヤーの初期位置
+    var sub_top = main.offset().top - parseInt(main.css('margin-top'),10);
+    // スクロールする上限
+    var sub_scroll = main.offset().top + main.outerHeight(true) - navi.outerHeight(true) - parseInt(navi.css('margin-top'),10);
+
+    if (navi.outerHeight(true) + target_top < main.outerHeight(true) + sub_top) {
+        $(window).scroll(function () {
+          var ws = $(window).scrollTop() + navbar_height;
+          $('.scroll').text(ws);
+          if (ws > sub_scroll) {
+            navi.css({position:'fixed', top: sub_scroll - ws + 'px', width: 'inherit'});
+          } else if(ws > target_top) {
+            navi.css({position:'fixed', top: navbar_height +'px', width: 'inherit'});
+          } else {
+            navi.css({position:'relative', top:  '0px', width: ''});
+          }
+        });
+    }
+}
+{% endif %}
+
+$(function(){
+    /* 処理 */
+    $('body').fadeIn(0);
 
     // Grid layout Style
     {% if theme_show_sidebar %}
@@ -57,40 +96,36 @@ $(function() {
 
     // download
     $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
-
-     {% if theme_sidebar_fixed %}
-    $(window).load(function(){
-      {% if theme_navbar_style == "fixed-top" %}
-      var navbar_height = $('.navbar').outerHeight(true);
-      {% else %}
-      var navbar_height = 0;
-      {% endif %}
-      // サイドバーの固定するレイヤー
-      var navi = $('.sphinxsidebarwrapper');
-      // メインのレイヤー
-      var main  = $('.document');
-
-      // 固定するレイヤーの初期位置
-      var target_top = navi.offset().top - parseInt(navi.css('margin-top'),10);
-      // メインレイヤーの初期位置
-      var sub_top = main.offset().top - parseInt(main.css('margin-top'),10);
-      // スクロールする上限
-      var sub_scroll = main.offset().top + main.outerHeight(true) - navi.outerHeight(true) - parseInt(navi.css('margin-top'),10);
-
-      if (navi.outerHeight(true) + target_top < main.outerHeight(true) + sub_top) {
-        $(window).scroll(function () {
-          var ws = $(window).scrollTop() + navbar_height;
-          $('.scroll').text(ws);
-          if (ws > sub_scroll) {
-            navi.css({position:'fixed', top: sub_scroll - ws + 'px', width: 'inherit'});
-          } else if(ws > target_top) {
-            navi.css({position:'fixed', top: navbar_height +'px', width: 'inherit'});
-          } else {
-            navi.css({position:'relative', top:  '0px', width: ''});
-          }
-        });
-      }
-    });
-    {% endif %}
 });
+
+/* ページ読み込み後 **************/
+$(window).load(function(){
+    /* 処理 */
+    adjustHeight();
+    {% if theme_sidebar_fixed %}stickySidebar(){% endif %}
+});
+
+/* ページ表示後  ****************/
+var timer = false;
+$(window).resize(function() {
+    if(timer !== false){
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        adjustHeight();
+   }, 200);
+});
+
+/* ページスクロール時 ******************/
+$(window).scroll(function(){
+});
+
+/* タイマーイベント ********************/
+interval = 1000;
+
+function startTimer() {
+    timer = setInterval(adjustHeight, interval);
+}
+
+startTimer();
 
