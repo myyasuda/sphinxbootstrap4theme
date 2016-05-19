@@ -52,9 +52,6 @@ $(function() {
     // images
     $("img").addClass("img-fluid");
 
-    // blockquote
-    $("blockquote").addClass("blockquote");
-
     // download
     $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
 
