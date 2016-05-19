@@ -521,3 +521,10 @@ ul.search > li >  div.context > span.highlighted {
     border-radius: 4px;
     background-color: #f0ad4e;
 }
+
+/*
+Blockquote
+*/
+blockquote {
+   padding-left: 1em;
+}
