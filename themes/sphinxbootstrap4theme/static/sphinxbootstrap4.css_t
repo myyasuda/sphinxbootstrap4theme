@@ -4,7 +4,7 @@ Base styles
 
 body {
     display: none;
-    font-size: 0.875em;
+    font-size: 1em;
     font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
 
@@ -34,12 +34,14 @@ Document Class styles
 
 div.document {
     {% if theme_sidebar_right|tobool %}
+    box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
 	-moz-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -o-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -ms-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.05) ;
     z-index: 1;
     {% else %}
+    box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
 	-moz-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -webkit-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
     -o-box-shadow: -10px 0px 20px 0px rgba(0,0,0,0.05) ;
@@ -89,6 +91,7 @@ Navbar Class styles
 */
 
 .navbar {
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
     -webkit-box-shadow: 10px 0px 20px 0px rgba(0,0,0,0.4);
     -o-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
@@ -261,9 +264,9 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a {
     padding-right: 1em;
     display: block;
     {% if theme_sidebar_color_class == 'dark' %}
-	color: rgba(255,255,255,0.5);
+	color: rgba(255,255,255,0.7);
 	{% else %}
-	color: rgba(0,0,0,0.3);
+	color: rgba(0,0,0,0.6);
 	{% endif %}
 }
 div.sphinxsidebar > div.sphinxsidebarwrapper  li.current > a {
@@ -337,6 +340,79 @@ Admonition Styles
 */
 .admonition-title {
     font-weight: bold;
+    margin-top: -10px;
+}
+
+p.admonition-title > div.icon {
+    width:26px;
+    height:26px;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:13px;
+    top: 7px;
+    margin-right: 5px;
+}
+
+div.alert-info > p.admonition-title > div.icon {
+    background:rgb(49, 112, 143);
+
+}
+div.alert-info > p.admonition-title > div.icon > div.question-mark:before {
+    color: rgb(217, 237, 247);
+    content: "?";
+    font-size: 25px;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
+
+div.alert-warning > p.admonition-title > div.icon {
+    background:rgb(138, 109, 59);
+
+}
+
+div.alert-warning > p.admonition-title > div.icon > div.check-mark:before  {
+    content: "";
+    color: rgb(252, 248, 227);
+    border: solid rgb(252, 248, 227);
+    border-width: 4px 4px 0px 0px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    left: 10px;
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    top: 6px;
+    left: 6px;
+}
+
+div.alert-success > p.admonition-title > div.icon {
+    background:rgb(60, 118, 61);
+
+}
+div.alert-success > p.admonition-title > div.icon > div.infomation-mark:before {
+    color: rgb(223, 240, 216);
+    content: "i";
+    font-size: 25px;
+    position: relative;
+    left: 9px;
+    top: -5px;
+}
+
+div.alert-danger > p.admonition-title > div.icon {
+    background:rgb(169, 68, 66);
+
+}
+div.alert-danger > p.admonition-title > div.icon > div.exclamation-mark:before {
+    color: rgb(242, 222, 222);
+    content: "!";
+    font-size: 25px;
+    position: relative;
+    left: 9px;
+    top: -5px;
 }
 
 /*
@@ -372,7 +448,7 @@ Code-block style
 
 /* Table */
 .table {
-    width: 0%;
+    width: auto;
 }
 
 tr.row-odd {
@@ -453,4 +529,11 @@ ul.search > li >  div.context > span.highlighted {
     padding: 2px 5px;
     border-radius: 4px;
     background-color: #f0ad4e;
+}
+
+/*
+Blockquote
+*/
+blockquote {
+   padding-left: 1em;
 }

@@ -157,6 +157,18 @@ Examples
 注釈
 ====
 
+ヒント
+
+.. hint::
+
+    これはヒントです！
+
+.. code-block:: rst
+
+    .. hint::
+
+        これはヒントです！
+
 ノート
 
 .. note::
@@ -180,3 +192,63 @@ Examples
     .. warning::
 
         これは警告です！
+
+ちなみに
+
+.. tip::
+
+    これはちなみにです！
+
+.. code-block:: rst
+
+    .. tip::
+
+        これはちなみにです！
+
+重要
+
+.. important::
+
+    これは重要です！
+
+.. code-block:: rst
+
+    .. important::
+
+        これは重要です！
+
+エラー
+
+.. error::
+
+    これはエラーです！
+
+.. code-block:: rst
+
+    .. error::
+
+        これはエラーです！
+
+ご用心
+
+.. caution::
+
+    これはご用心です！
+
+.. code-block:: rst
+
+    .. caution::
+
+        これはご用心です！
+
+危険
+
+.. danger::
+
+    これは危険です！
+
+.. code-block:: rst
+
+    .. danger::
+
+        これは危険です！

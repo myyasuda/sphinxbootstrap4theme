@@ -7,17 +7,14 @@ function adjustHeight() {
     );
     $('.document').height(m);
     $('.sphinxsidebar').height(m);
-    console.log('adjustHeight');
 }
 
-{% if theme_sidebar_fixed %}
 function stickySidebar() {
     {% if theme_navbar_style == "fixed-top" %}
     var navbar_height = $('.navbar').outerHeight(true);
     {% else %}
     var navbar_height = 0;
     {% endif %}
-
     // サイドバーの固定するレイヤー
     var navi = $('.sphinxsidebarwrapper');
     // メインのレイヤー
@@ -31,7 +28,7 @@ function stickySidebar() {
     var sub_scroll = main.offset().top + main.outerHeight(true) - navi.outerHeight(true) - parseInt(navi.css('margin-top'),10);
 
     if (navi.outerHeight(true) + target_top < main.outerHeight(true) + sub_top) {
-        $(window).scroll(function () {
+      $(window).scroll(function () {
           var ws = $(window).scrollTop() + navbar_height;
           $('.scroll').text(ws);
           if (ws > sub_scroll) {
@@ -41,15 +38,12 @@ function stickySidebar() {
           } else {
             navi.css({position:'relative', top:  '0px', width: ''});
           }
-        });
+      });
     }
 }
-{% endif %}
 
-$(function(){
-    /* 処理 */
+$(function() {
     $('body').fadeIn(0);
-
     // Grid layout Style
     {% if theme_show_sidebar %}
     $(".sphinxsidebar").addClass("col-md-2 bg-{{ theme_sidebar_bg_class }}");
@@ -83,49 +77,28 @@ $(function(){
 
     // Admonition
     $(".admonition").addClass("alert")
-        .filter(".hint").addClass("alert-info").end()
-        .filter(".note, .warning").addClass("alert-warning").end()
-        .filter(".tip, .important").addClass("alert-success").end()
-        .filter(".caution, .danger, .error").addClass("alert-danger").end();
+        .filter(".hint").addClass("alert-info").children('p.admonition-title').prepend('<div class="icon"><div class="question-mark"></div></div>').end().end()
+        .filter(".note, .warning").addClass("alert-warning").children('p.admonition-title').prepend('<div class="icon"><div class="check-mark"></div></div>').end().end()
+        .filter(".tip, .important").addClass("alert-success").children('p.admonition-title').prepend('<div class="icon"><div class="infomation-mark"></div></div>').end().end()
+        .filter(".caution, .danger, .error").addClass("alert-danger").children('p.admonition-title').prepend('<div class="icon"><div class="exclamation-mark"></div></div>').end().end();
 
     // images
     $("img").addClass("img-fluid");
 
-    // blockquote
-    $("blockquote").addClass("blockquote");
-
     // download
     $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
+
+    setInterval(function() {
+      adjustHeight()
+     }, 1000);
 });
 
-/* ページ読み込み後 **************/
+$(window).on('load resize', function(){
+    adjustHeight()
+});
+
+{% if theme_sidebar_fixed %}
 $(window).load(function(){
-    /* 処理 */
-    adjustHeight();
-    {% if theme_sidebar_fixed %}stickySidebar(){% endif %}
+  stickySidebar()
 });
-
-/* ページ表示後  ****************/
-var timer = false;
-$(window).resize(function() {
-    if(timer !== false){
-        clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-        adjustHeight();
-   }, 200);
-});
-
-/* ページスクロール時 ******************/
-$(window).scroll(function(){
-});
-
-/* タイマーイベント ********************/
-interval = 1000;
-
-function startTimer() {
-    timer = setInterval(adjustHeight, interval);
-}
-
-startTimer();
-
+{% endif %}
