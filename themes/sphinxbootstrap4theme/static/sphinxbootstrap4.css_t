@@ -366,40 +366,63 @@ div.alert-info > p.admonition-title > div.icon > div.question-mark:before {
     top: -5px;
 }
 
-div.alert-warning > p.admonition-title > div.icon {
-    background:rgb(138, 109, 59);
-
+div.alert-success > p.admonition-title > div.icon {
+    background:rgb(60, 118, 61);
 }
 
-div.alert-warning > p.admonition-title > div.icon > div.check-mark:before  {
+div.alert-success > p.admonition-title > div.icon > div.check-mark:before  {
     content: "";
-    color: rgb(252, 248, 227);
-    border: solid rgb(252, 248, 227);
+    border: solid rgb(223, 240, 216);
     border-width: 4px 4px 0px 0px;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     transform: rotate(135deg);
-    left: 10px;
+    left: 5px;
     position: absolute;
     width: 15px;
     height: 10px;
     top: 6px;
-    left: 6px;
 }
 
-div.alert-success > p.admonition-title > div.icon {
-    background:rgb(60, 118, 61);
-
+div.alert-warning > p.admonition-title > div.icon {
+    background:rgb(138, 109, 59);
 }
-div.alert-success > p.admonition-title > div.icon > div.infomation-mark:before {
-    color: rgb(223, 240, 216);
-    content: "i";
+
+div.alert-warning > p.admonition-title > div.icon > div.information-mark {
+    width:6px;
+    height:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    background:rgb(252, 248, 227);
+    left: 10px;
+    position: absolute;
+    top: 3px;
+}
+div.alert-warning > p.admonition-title > div.icon > div.information-mark:before {
+    content: "";
+    border: solid rgb(252, 248, 227);
+    border-width: 2px 4px 2px 0px;
     font-size: 25px;
-    position: relative;
-    left: 9px;
-    top: -5px;
+    position: absolute;
+    left: -1px;
+    top: 8px;
+    padding: 1px;
+    height: 12px;
+}
+
+div.alert-warning > p.admonition-title > div.icon > div.information-mark:after {
+    content: "";
+    border: solid rgb(252, 248, 227);
+    border-width: 0px 0px 2px 0px;
+    font-size: 25px;
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    padding: 1px;
+    height: 12px;
 }
 
 div.alert-danger > p.admonition-title > div.icon {
@@ -410,7 +433,7 @@ div.alert-danger > p.admonition-title > div.icon > div.exclamation-mark:before {
     color: rgb(242, 222, 222);
     content: "!";
     font-size: 25px;
-    position: relative;
+    position: absolute;
     left: 9px;
     top: -5px;
 }

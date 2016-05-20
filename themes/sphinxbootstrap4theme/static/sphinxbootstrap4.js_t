@@ -78,8 +78,8 @@ $(function() {
     // Admonition
     $(".admonition").addClass("alert")
         .filter(".hint").addClass("alert-info").children('p.admonition-title').prepend('<div class="icon"><div class="question-mark"></div></div>').end().end()
-        .filter(".note, .warning").addClass("alert-warning").children('p.admonition-title').prepend('<div class="icon"><div class="check-mark"></div></div>').end().end()
-        .filter(".tip, .important").addClass("alert-success").children('p.admonition-title').prepend('<div class="icon"><div class="infomation-mark"></div></div>').end().end()
+        .filter(".note, .warning").addClass("alert-warning").children('p.admonition-title').prepend('<div class="icon"><div class="information-mark"></div></div>').end().end()
+        .filter(".tip, .important").addClass("alert-success").children('p.admonition-title').prepend('<div class="icon"><div class="check-mark"></div></div>').end().end()
         .filter(".caution, .danger, .error").addClass("alert-danger").children('p.admonition-title').prepend('<div class="icon"><div class="exclamation-mark"></div></div>').end().end();
 
     // images
