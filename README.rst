@@ -1,9 +1,11 @@
+.. image:: https://travis-ci.org/myyasuda/sphinxbootstrap4theme.svg?branch=master
+    :target: https://travis-ci.org/myyasuda/sphinxbootstrap4theme
+
 ==========================================
 Bootstrap v4.0.0alpha.2のSphinx HTMLテーマ
 ==========================================
 
-.. image:: https://travis-ci.org/myyasuda/sphinxbootstrap4theme.svg?branch=master
-    :target: https://travis-ci.org/myyasuda/sphinxbootstrap4theme
+`デモ <http://myyasuda.github.io/sphinxbootstrap4theme>`_
 
 利用方法
 ========
