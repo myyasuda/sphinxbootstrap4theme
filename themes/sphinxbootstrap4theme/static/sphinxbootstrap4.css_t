@@ -112,15 +112,15 @@ Navbar Class styles
     height: 37px;
 }
 
-.navbar .navbar-dropdown-item > ul >li:last-child{
-    margin-right: 16px;
-}
+/*
+Navbar Dropdown styles
+*/
 
-.navbar .navbar-dropdown-item > ul > li > ul > li {
+.navbar li.toctree-l1 > ul > li {
     position: relative;
 }
 
-.navbar .navbar-dropdown-item > ul > li > ul > li a {
+.navbar li.toctree-l1 > ul a {
     display: block;
     overflow: hidden;
     white-space: nowrap;
@@ -129,15 +129,15 @@ Navbar Class styles
     font-size: 12px;
 }
 
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul,
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul > li > ul,
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul > li > ul > li > ul {
+.navbar li.toctree-l1 > ul > li > ul,
+.navbar li.toctree-l1 > ul > li > ul > li > ul,
+.navbar li.toctree-l1 > ul > li > ul > li > ul > li > ul {
     display: none;
     list-style: none;
 }
 
-.navbar .navbar-dropdown-item > ul > li > ul > li:hover > ul,
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul > li:hover > ul{
+.navbar li.toctree-l1 > ul > li:hover > ul,
+.navbar li.toctree-l1 > ul > li > ul > li:hover > ul{
     position: absolute;
     z-index: 1010;
     margin-top: -6px;
@@ -148,18 +148,15 @@ Navbar Class styles
     left:101%;
     width: 100%;
 }
-.navbar .navbar-dropdown-item > ul > li > ul > li:hover > ul > li,
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul > li:hover > ul > li{
+.navbar li.toctree-l1 > ul > li:hover > ul > li,
+.navbar li.toctree-l1 > ul > li > ul > li:hover > ul > li{
     position: relative;
 }
 
-.navbar .navbar-dropdown-item > ul > li > ul > li:hover > ul > li > a,
-.navbar .navbar-dropdown-item > ul > li > ul > li > ul > li:hover > ul > li > a{
+.navbar li.toctree-l1 > ul > li:hover > ul > li > a,
+.navbar li.toctree-l1 > ul > li > ul > li:hover > ul > li > a{
     position: relative;
     display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     line-height: 25px;
     font-size: 12px;
 }
@@ -174,7 +171,6 @@ Navbar Class styles
     position: absolute;
     right: 1px;
 }
-
 /*
 Sidebar styles
 */
