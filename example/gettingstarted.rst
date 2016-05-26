@@ -45,6 +45,10 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
        # Trueにした場合、ドロップダウンで4階層目まで表示します。
        'navbar_show_pages' : True,
 
+       # navbarに表示するtoctreeのメニュー名を指定します。
+       # (Default: 'Pages')
+       navbar_pages_title : 'Pages',
+
        # navbarに表示されるリンクメニューを設定します。
        # 第一引数：メニュー名
        # 第二引数：URL

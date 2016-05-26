@@ -4,7 +4,7 @@
 source_suffix = '.rst'
 master_doc = 'index'
 
-version = "0.1.4"
+version = "0.2.0"
 
 project = 'Bootstrap4 theme'
 copyright = '2016, Masahiko Yasuda'

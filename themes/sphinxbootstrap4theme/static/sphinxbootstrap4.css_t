@@ -89,7 +89,6 @@ div.document .blockquote {
 /*
 Navbar Class styles
 */
-
 .navbar {
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
 	-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.4);
@@ -115,12 +114,15 @@ Navbar Class styles
 /*
 Navbar Dropdown styles
 */
+#navbar-pages > ul {
+    width: calc(200% + 100px);
+}
 
-.navbar li.toctree-l1 > ul > li {
+#navbar-pages > ul > li
     position: relative;
 }
 
-.navbar li.toctree-l1 > ul a {
+#navbar-pages > ul > li a{
     display: block;
     overflow: hidden;
     white-space: nowrap;
@@ -129,15 +131,16 @@ Navbar Dropdown styles
     font-size: 12px;
 }
 
-.navbar li.toctree-l1 > ul > li > ul,
-.navbar li.toctree-l1 > ul > li > ul > li > ul,
-.navbar li.toctree-l1 > ul > li > ul > li > ul > li > ul {
+#navbar-pages > ul > li > ul,
+#navbar-pages > ul > li > ul > li > ul,
+#navbar-pages > ul > li > ul > li > ul > li > ul {
     display: none;
     list-style: none;
 }
 
-.navbar li.toctree-l1 > ul > li:hover > ul,
-.navbar li.toctree-l1 > ul > li > ul > li:hover > ul{
+#navbar-pages > ul > li:hover > ul,
+#navbar-pages > ul > li > ul > li:hover > ul,
+#navbar-pages > ul > li > ul > li > ul > li:hover > ul{
     position: absolute;
     z-index: 1010;
     margin-top: -6px;
@@ -148,20 +151,23 @@ Navbar Dropdown styles
     left:101%;
     width: 100%;
 }
-.navbar li.toctree-l1 > ul > li:hover > ul > li,
-.navbar li.toctree-l1 > ul > li > ul > li:hover > ul > li{
+#navbar-pages > ul > li:hover > ul > li,
+#navbar-pages > ul > li > ul > li:hover > ul > li,
+#navbar-pages > ul > li > ul > li > ul > li:hover > ul > li{
     position: relative;
 }
 
-.navbar li.toctree-l1 > ul > li:hover > ul > li > a,
-.navbar li.toctree-l1 > ul > li > ul > li:hover > ul > li > a{
+#navbar-pages > ul > li:hover > ul > li > a,
+#navbar-pages > ul > li > ul > li:hover > ul > li > a,
+#navbar-pages > ul > li > ul > li > ul > li:hover > ul > li > a{
     position: relative;
     display: block;
-    line-height: 25px;
-    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.arrow:after {
+#navbar-pages .arrow:after {
     content: "";
     display: inline-block;
     border: 6px solid transparent;
