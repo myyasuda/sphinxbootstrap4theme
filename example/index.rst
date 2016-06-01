@@ -2,7 +2,7 @@
 Sphinx Bootstrap4 Theme
 ==============================
 
-Sphinx Bootstrap4 Themeのデモ用のSphinxドキュメント
+**Sphinx Bootstrap4 Themeのデモ用のSphinxドキュメント**
 
 Contents
 ===========
@@ -14,10 +14,4 @@ Contents
 
    gettingstarted
    examples
-
-開発関連のTipsやTODOリスト
-
-.. toctree::
-   :maxdepth: 3
-
    dev/index

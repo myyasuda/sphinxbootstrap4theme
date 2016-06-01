@@ -1,52 +1,56 @@
-function adjustHeight() {
-    var m = Math.max(
-        $('.body').height() + $('#navbar').outerHeight(),
-        $('.document').outerHeight(),
-        $('.sphinxsidebar').outerHeight(),
-        $(window).height() - $('.footer').outerHeight()  - $('#navbar').outerHeight()
-    );
-    $('.document').height(m);
-    $('.sphinxsidebar').height(m);
-}
-
 function stickySidebar() {
     {% if theme_navbar_style == "fixed-top" %}
-    var navbar_height = $('.navbar').outerHeight(true);
+    var topPadding = $('.navbar').outerHeight(true);
     {% else %}
-    var navbar_height = 0;
+    var topPadding = 0;
     {% endif %}
-    // サイドバーの固定するレイヤー
-    var navi = $('.sphinxsidebarwrapper');
-    // メインのレイヤー
-    var main  = $('.document');
+    var $sidebar = $('.sphinxsidebarwrapper');
+    var $document  = $('.document');
 
-    // 固定するレイヤーの初期位置
-    var target_top = navi.offset().top - parseInt(navi.css('margin-top'),10);
-    // メインレイヤーの初期位置
-    var sub_top = main.offset().top - parseInt(main.css('margin-top'),10);
-    // スクロールする上限
-    var sub_scroll = main.offset().top + main.outerHeight(true) - navi.outerHeight(true) - parseInt(navi.css('margin-top'),10);
+    var sidebar_top = $sidebar.offset().top - parseInt($sidebar.css('margin-top'),10);
+    var document_top = $document.offset().top - parseInt($document.css('margin-top'),10);
 
-    if (navi.outerHeight(true) + target_top < main.outerHeight(true) + sub_top) {
-      $(window).scroll(function () {
-          var ws = $(window).scrollTop() + navbar_height;
-          if (ws > sub_scroll) {
-            navi.css({position:'fixed', top: sub_scroll - ws + 'px', width: 'inherit'});
-          } else if(ws > target_top) {
-            navi.css({position:'fixed', top: navbar_height +'px', width: 'inherit'});
+    if ($sidebar.outerHeight(true) + sidebar_top < $document.outerHeight(true) + document_top) {
+      var $window = $(window);
+      $window.scroll(function () {
+          var document_scroll = $document.offset().top + $document.outerHeight(true) - $sidebar.outerHeight(true) - parseInt($sidebar.css('margin-top'),10);
+          var ws = $window.scrollTop() + topPadding;
+          if (ws > document_scroll) {
+            $sidebar.css({position:'fixed', top: document_scroll - $window.scrollTop() + 'px', width: 'inherit'});
+          } else if(ws > sidebar_top) {
+            $sidebar.css({position:'fixed', top: topPadding +'px', width: 'inherit'});
           } else {
-            navi.css({position:'relative', top:  '0px', width: ''});
+            $sidebar.css({position:'relative', top:  '0px', width: ''});
           }
       });
     }
 }
 
+function sidebarTreeView() {
+    var $toctree = $('.sidebartoctree > ul');
+
+    $toctree.find('li').each(function(index, element) {
+        $li = $(element).has('ul')
+
+        $li.children('a').append('<a class="pull-xs-right arrow" data-toggle="collapse" href="#collapse' + index + '" aria-expanded="true"></a>').end()
+            .children('ul').addClass('collapse').attr({'id': 'collapse' + index}).end();
+        if ($li.hasClass('current')) { $li.children('ul').addClass('in'); }
+    });
+
+}
+
 $(function() {
-    $('body').fadeIn(0);
+    $('body').fadeIn(0).scrollspy({ target: 'li.current' });
+
     // Grid layout Style
+    $(".sphinxsidebarwrapper > .sidebartoctree > ul").addClass('nav nav-pills nav-stacked')
+        .find('li').addClass('nav-item').end()
+        .find('a.reference').addClass('nav-link').end()
+
     {% if theme_show_sidebar %}
-    $(".sphinxsidebar").addClass("col-md-2 bg-{{ theme_sidebar_bg_class }}");
+    $(".sphinxsidebar").addClass("col-md-2");
     $(".document").addClass("col-md-10");
+    sidebarTreeView();
     {% else %}
     $(".document").addClass("col-md-12")
         .children(".documentwrapper").addClass("container");
@@ -84,14 +88,8 @@ $(function() {
     // download
     $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
 
-    setInterval(function() {
-      adjustHeight()
-     }, 1000);
 });
 
-$(window).on('load resize', function(){
-    adjustHeight()
-});
 
 {% if theme_sidebar_fixed %}
 $(window).load(function(){
