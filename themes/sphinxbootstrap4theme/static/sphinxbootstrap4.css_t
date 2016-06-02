@@ -227,13 +227,11 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.reference.current {
 
 div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow {
     border: .5em solid transparent ;
-    border-top: .5em solid rgb(236, 238, 239);
+    border-top: .5em solid rgba(0, 0, 0, .4);
     width: 0;
     height: 0;
     margin: .5em 0 0 0;
-    display: inline;
 }
-
 /*
 Footer styles
 */
