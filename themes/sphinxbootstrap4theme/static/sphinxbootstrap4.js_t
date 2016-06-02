@@ -1,4 +1,4 @@
-function stickySidebar() {
+function stickySidebarOld() {
     {% if theme_navbar_style == "fixed-top" %}
     var topPadding = $('.navbar').outerHeight(true);
     {% else %}
@@ -24,6 +24,39 @@ function stickySidebar() {
           }
       });
     }
+}
+
+function stickySidebar() {
+    {% if theme_navbar_style == "fixed-top" %}
+    var topPadding = $('.navbar').outerHeight(true);
+    {% else %}
+    var topPadding = 0;
+    {% endif %}
+    var $sidebarwrapper = $('.sphinxsidebarwrapper');
+    var $document = $('.document');
+    var sidebarTop = $sidebarwrapper.offset().top - parseInt($sidebarwrapper.css('margin-top'),10);
+    var $window = $(window);
+    var documentBottom = $document.outerHeight(true) + topPadding;
+    var sidebarHeight = $sidebarwrapper.height();
+
+    if ($document.outerHeight(true) + topPadding < $sidebarwrapper.height()) {
+        return;
+    }
+
+    $window.scroll(function() {
+        var documentBottom = $document.outerHeight(true) + topPadding;
+        var sidebarHeight = $sidebarwrapper.height();
+        var scrollTop = $window.scrollTop() + topPadding - sidebarTop;
+        console.log('scrollTop:' + scrollTop + '   sidebarTop:' + sidebarTop + '   documentBottom' + documentBottom + '   sidebarHeight:' + sidebarHeight);
+
+        if (documentBottom < sidebarHeight + scrollTop) {
+          $sidebarwrapper.css({'margin-top': documentBottom - sidebarHeight });
+        } else if (scrollTop > 0) {
+          $sidebarwrapper.css({'margin-top': scrollTop});
+        } else {
+          $sidebarwrapper.css({'margin-top': 0});
+        }
+    });
 }
 
 function sidebarTreeView() {

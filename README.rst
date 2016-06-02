@@ -52,7 +52,7 @@ conf.pyの設定の設定例
 
        # navbarに表示するtoctreeのメニュー名を指定します。
        # (Default: 'Pages')
-       navbar_pages_title : 'Pages',
+       'navbar_pages_title' : 'Pages',
 
        # navbarに表示されるリンクメニューを設定します。
        # 第一引数：メニュー名

@@ -71,9 +71,8 @@
 {%- endblock %}
 
 {%- block content %}
-
-  <div class="main">
   {%- block breadcrumb1 %}{{breadcrumb()}}{% endblock %}
+  <div class="main">
   {%- block sidebar1 %} {% if theme_show_sidebar|tobool and not theme_sidebar_right|tobool %}{{ sphinxsidebar() }}{% endif %} {% endblock %}
 
     <div class="document">
