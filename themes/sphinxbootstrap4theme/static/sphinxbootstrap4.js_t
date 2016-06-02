@@ -53,8 +53,8 @@ $(function() {
         .find('a.reference').addClass('nav-link').end()
 
     {% if theme_show_sidebar %}
-    $(".sphinxsidebar").addClass("col-md-2");
-    $(".document").addClass("col-md-10");
+    $(".sphinxsidebar").addClass("col-md-3");
+    $(".document").addClass("col-md-9");
     sidebarTreeView();
     {% else %}
     $(".document").addClass("col-md-12")

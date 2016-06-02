@@ -26,8 +26,8 @@ a {
     {% if theme_navbar_style != "full" %}
     margin-top: 54px;
     {% endif %}
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 {% if theme_navbar_style != "full" %}
@@ -231,6 +231,9 @@ div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow {
     width: 0;
     height: 0;
     margin: .5em 0 0 0;
+    position: absolute;
+    z-index: 10;
+    right: .3em;
 }
 /*
 Footer styles
