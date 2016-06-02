@@ -1,31 +1,3 @@
-function stickySidebarOld() {
-    {% if theme_navbar_style == "fixed-top" %}
-    var topPadding = $('.navbar').outerHeight(true);
-    {% else %}
-    var topPadding = 0;
-    {% endif %}
-    var $sidebar = $('.sphinxsidebarwrapper');
-    var $document  = $('.document');
-
-    var sidebar_top = $sidebar.offset().top - parseInt($sidebar.css('margin-top'),10);
-    var document_top = $document.offset().top - parseInt($document.css('margin-top'),10);
-
-    if ($sidebar.outerHeight(true) + sidebar_top < $document.outerHeight(true) + document_top) {
-      var $window = $(window);
-      $window.scroll(function () {
-          var document_scroll = $document.offset().top + $document.outerHeight(true) - $sidebar.outerHeight(true) - parseInt($sidebar.css('margin-top'),10);
-          var ws = $window.scrollTop() + topPadding;
-          if (ws > document_scroll) {
-            $sidebar.css({position:'fixed', top: document_scroll - $window.scrollTop() + 'px', width: 'inherit'});
-          } else if(ws > sidebar_top) {
-            $sidebar.css({position:'fixed', top: topPadding +'px', width: 'inherit'});
-          } else {
-            $sidebar.css({position:'relative', top:  '0px', width: ''});
-          }
-      });
-    }
-}
-
 function stickySidebar() {
     {% if theme_navbar_style == "fixed-top" %}
     var topPadding = $('.navbar').outerHeight(true);
