@@ -37,9 +37,12 @@ function sidebarTreeView() {
     $toctree.find('li').each(function(index, element) {
         $li = $(element).has('ul')
 
-        $li.children('a').append('<a class="pull-xs-right arrow" data-toggle="collapse" href="#collapse' + index + '" aria-expanded="true"></a>').end()
+        $li.children('a').append('<a class="pull-xs-right arrow collapsed" data-toggle="collapse" href="#collapse' + index + '" aria-expanded="true"></a>').end()
             .children('ul').addClass('collapse').attr({'id': 'collapse' + index}).end();
-        if ($li.hasClass('current')) { $li.children('ul').addClass('in'); }
+        if ($li.hasClass('current')) {
+            $li.children('ul').addClass('in').end()
+                .children('a').children('a').removeClass('collapsed');
+        }
     });
 
 }

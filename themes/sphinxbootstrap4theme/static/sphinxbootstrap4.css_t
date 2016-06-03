@@ -221,13 +221,26 @@ div.sphinxsidebar > div.sphinxsidebarwrapper a.reference {
     display: block;
     padding: .1em .5em;
 }
+
 div.sphinxsidebar > div.sphinxsidebarwrapper a.reference.current {
     color: #fff;
     cursor: default;
     background-color: #0275d8;
 }
 
-div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow {
+/* sidebar tree minus icon  */
+div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow:not(.collapsed) {
+    border-bottom: .3em solid rgba(0, 0, 0, .4);
+    width: 1em;
+    height: 0;
+    margin: .6em 0 0 0;
+    position: absolute;
+    z-index: 10;
+    right: .3em;
+}
+
+/* sidebar tree arrow icon */
+div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow.collapsed {
     border: .5em solid transparent ;
     border-top: .5em solid rgba(0, 0, 0, .4);
     width: 0;
