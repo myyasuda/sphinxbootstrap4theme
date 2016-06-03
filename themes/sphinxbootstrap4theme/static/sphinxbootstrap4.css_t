@@ -241,9 +241,10 @@ Footer styles
 */
 
 .footer {
+    border-top: 1px solid rgb(236, 238, 239);
 	color: rgb(85, 89, 92);
-	background-color: rgb(236, 238, 239);
 	padding: 10px 10px 10px 10px;
+	margin-top: 20px;
 }
 
 .copyright {
