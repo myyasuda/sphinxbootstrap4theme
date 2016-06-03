@@ -57,6 +57,11 @@ conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
             ('Home', 'index', False),
             ("Link", "http://example.com", True)
        ],
+
+       # サイドバー + ドキュメント表示部の合計の幅を指定します。
+       # (Default: 80%)
+       'main_width' : '80%',
+
        # sidebarを表示するかどうか指定します。
        'show_sidebar' : True,
 

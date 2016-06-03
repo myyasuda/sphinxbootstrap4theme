@@ -63,6 +63,10 @@ conf.pyの設定の設定例
             ("Link", "http://example.com", True)
        ],
 
+       # サイドバー + ドキュメント表示部の合計の幅を指定します。
+       # (Default: 80%)
+       'main_width' : '80%',
+
        # sidebarを表示するかどうか指定します。
        # 設定値：True, Flase (Default: True)
        'show_sidebar' : True,

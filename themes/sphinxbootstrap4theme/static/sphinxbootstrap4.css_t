@@ -26,8 +26,9 @@ a {
     {% if theme_navbar_style != "full" %}
     margin-top: 54px;
     {% endif %}
-    margin-left: 10%;
-    margin-right: 10%;
+    width: {{ theme_main_width }};
+    margin-left: auto;
+    margin-right: auto;
 }
 
 {% if theme_navbar_style != "full" %}
