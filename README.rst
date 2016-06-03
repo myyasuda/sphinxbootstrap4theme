@@ -82,11 +82,7 @@ conf.pyの設定の設定例
 
        # テーブルのヘッダーのスタイルのクラスを指定します。
        # 設定値：'inverse', 'light', '' (Default: 'inverse')
-       'table_thead_class' : 'inverse',
-
-       # フッターにショートカットキーの一覧表示用のボタンを表示するかどうか指定します。
-       # 設定値：True, False (Default: False)
-       'show_shortcut_list_btn' : False
+       'table_thead_class' : 'inverse'
    }
 
 
