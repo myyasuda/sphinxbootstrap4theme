@@ -117,7 +117,7 @@ Navbar Dropdown styles
     position: relative;
 }
 
-#navbar-pages > ul > li a{
+#navbar-pages > ul > li > a{
     display: block;
     overflow: hidden;
     white-space: nowrap;
