@@ -25,8 +25,7 @@ html_theme_options = {
         ('Home', 'index', False),
         ("Link", "http://example.com", True),
         ("GitHub", "https://github.com/myyasuda/sphinxbootstrap4theme", True)
-    ],
-    'show_shortcut_list_btn' : True
+    ]
 }
 
 rst_prolog= u"""
