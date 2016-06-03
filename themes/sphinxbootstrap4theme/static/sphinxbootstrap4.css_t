@@ -172,6 +172,7 @@ Navbar Dropdown styles
     position: absolute;
     right: 1px;
 }
+
 /*
 Sidebar styles
 */
@@ -236,6 +237,7 @@ div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow {
     z-index: 10;
     right: .3em;
 }
+
 /*
 Footer styles
 */
