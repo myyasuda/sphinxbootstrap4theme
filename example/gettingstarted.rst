@@ -2,16 +2,16 @@
 Getting Started
 ================
 
-パッケージのインストール
-============================
+Instllation
+===========
 
 .. code-block:: bat
 
    pip install sphinxbootstrap4theme
 
 
-conf.pyの設定
-===================
+Setting conf.py
+===============
 
 .. code-block:: python
 
@@ -21,8 +21,8 @@ conf.pyの設定
    html_theme_path = [sphinxbootstrap4theme.get_path()]
 
 
-オプション設定
-=================
+html theme options
+==================
 
 conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
 

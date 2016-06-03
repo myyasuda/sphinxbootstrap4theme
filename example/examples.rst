@@ -4,43 +4,8 @@ Examples
 
 .. _TOP:
 
-セクション
-==========
-
-.. code-block::  rst
-
-    =====================
-    セクション(レベル１)
-    =====================
-
-    レベル２
-    ========
-
-    レベル３
-    --------
-
-    レベル４
-    ^^^^^^^^
-
-**出力例**
-
-セクション(レベル2)
-=====================
-
-レベル３
-========
-
-レベル４
---------
-
-レベル５
-^^^^^^^^
-
-出力例終わり
-
-
-強調
-====
+Tables
+======
 
 +---------+-----------+------------+-------------------+
 |         | 使用例    |  書き方    |  HTMLタグ         |
@@ -52,90 +17,8 @@ Examples
 |コード   |``文字列`` |\`\`で囲む  |<span class="pre"> |
 +---------+-----------+------------+-------------------+
 
-引用
-====
-
-.. code-block:: rst
-
-    以下は引用文です。
-
-        こんにちは。これは引用文です。
-
-    ここは引用文ではありません。
-
-**出力例**
-
-以下は引用文です。
-
-    こんにちは。これは引用文です。
-
-ここは引用文ではありません。
-
-番号なしリスト
-==============
-
-.. code-block:: rst
-
-    * 項目1
-    * 項目2
-    * 項目3
-
-      * 項目3-1
-      * 項目3-2
-
-    * 項目4
-
-    + 項目1
-    + 項目2
-
-    - 項目1
-    - 項目2
-
-
-**出力例**
-
-* 項目1
-* 項目2
-* 項目3
-
-  * 項目3-1
-  * 項目3-2
-
-* 項目4
-
-+ 項目1
-+ 項目2
-
-- 項目1
-- 項目2
-
-
-
-番号付きリスト
-===============
-
-.. code-block:: rst
-
-    1. 項目1
-    2. 項目2
-    3. 項目3
-
-    #. 項目1
-    #. 項目2
-    #. 項目3
-
-
-1. 項目1
-2. 項目2
-3. 項目3
-
-#. 項目1
-#. 項目2
-#. 項目3
-
-
-コードブロック
-===============
+Code Blocks
+===========
 
 ::
 
@@ -156,116 +39,117 @@ Examples
         print sys.path
 
 
-ダウンロード用のリンク
-======================
-以下のように書きます。
+Download Links
+==============
+
+**rst**
 
 .. code-block:: rst
 
-    :download:`このファイル <examples.rst>`
+    :download:`this file <examples.rst>`
 
-**出力例**
+**Output Example**
 
-「 :download:`このファイル <./examples.rst>` 」のようにリンクが出来ます。
+:download:`this file <./examples.rst>`
 
 
-注釈
-====
+Admonitions
+===========
 
-**ヒント**
+**Hint**
 
 .. code-block:: rst
 
     .. hint::
 
-        これはヒントです！
+        This is a hint directive!
 
 .. hint::
 
-    これはヒントです！
+    This is a **hint** directive!
 
-**ノート**
+**Note**
 
 .. code-block:: rst
 
     .. note::
 
-        これは注釈です！
+        This is a note directive!
 
 .. note::
 
-    これは注釈です！
+    This is a **note** directive!
 
-**警告**
+**Warning**
 
 .. code-block:: rst
 
     .. warning::
 
-        これは警告です！
+        This is a warning directive!
 
 .. warning::
 
-    これは警告です！
+    This is a **warning** directive!
 
-**ちなみに**
+**Tip**
 
 .. code-block:: rst
 
     .. tip::
 
-        これはちなみにです！
+        This is a tip directive!
 
 .. tip::
 
-    これはちなみにです！
+    This is a **tip** directive!
 
 
-**重要**
+**Important**
 
 .. code-block:: rst
 
     .. important::
 
-        これは重要です！
+        This is a important directive!
 
 .. important::
 
-    これは重要です！
+    This is a **important** directive!
 
-**エラー**
+**Error**
 
 .. code-block:: rst
 
     .. error::
 
-        これはエラーです！
+        This is a error directive!
 
 .. error::
 
-    これはエラーです！
+    This is a **error** directive!
 
-**ご用心**
+**Caution**
 
 .. code-block:: rst
 
     .. caution::
 
-        これはご用心です！
+        This is a caution directive!
 
 .. caution::
 
-    これはご用心です！
+    This is a caution directive!
 
-**危険**
+**Danger**
 
 .. code-block:: rst
 
     .. danger::
 
-        これは危険です！
+        This is a danger directive!
 
 .. danger::
 
-    これは危険です！
+    This is a **danger** directive!
 

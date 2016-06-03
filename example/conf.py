@@ -10,7 +10,7 @@ project = 'Bootstrap4 theme'
 copyright = '2016, Masahiko Yasuda'
 author = 'Masahiko Yasuda'
 
-language = 'ja'
+language = 'en'
 
 # templates_path = ['_templates']
 

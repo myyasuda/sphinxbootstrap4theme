@@ -2,12 +2,11 @@
 Sphinx Bootstrap4 Theme
 ==============================
 
-**Sphinx Bootstrap4 Themeのデモ用のSphinxドキュメント**
+| **Sphinx Bootstrap4 Theme is HTML theme for** `Sphinx <http://sphinx.pocoo.org/>`_.
+| **This theme has been using** `Bootstrap v4.0.0-alpha.2 <http://v4-alpha.getbootstrap.com/>`_.
 
 Contents
-===========
-
-テーマの適用方法及び設定について
+========
 
 .. toctree::
    :maxdepth: 3
