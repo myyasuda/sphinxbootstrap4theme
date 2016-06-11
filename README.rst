@@ -1,87 +1,94 @@
 .. image:: https://travis-ci.org/myyasuda/sphinxbootstrap4theme.svg?branch=master
     :target: https://travis-ci.org/myyasuda/sphinxbootstrap4theme
 
-==========================================
-Bootstrap v4.0.0alpha.2のSphinx HTMLテーマ
-==========================================
+=============================================
+Bootstrap v4.0.0alpha.2 HTML Theme for Sphinx
+=============================================
 
-`デモ <http://myyasuda.github.io/sphinxbootstrap4theme>`_
+`Demo <http://myyasuda.github.io/sphinxbootstrap4theme>`_
 
-利用方法
-========
+Instllation
+===========
 
 .. code-block:: bat
 
    pip install sphinxbootstrap4theme
 
-conf.pyの設定の設定例
----------------------
+
+Setting conf.py
+===============
 
 .. code-block:: python
 
    import sphinxbootstrap4theme
 
-   # htmlテーマの設定
    html_theme = 'sphinxbootstrap4theme'
    html_theme_path = [sphinxbootstrap4theme.get_path()]
 
-   # htmlロゴの設定
-   # ロゴはnavbarに表示されます。
-   # height37pxで表示されます。
+   # Html logo in navbar.
+   # Fit in the navbar at the height of image is 37 px.
    html_logo = '_static/logo.jpg'
 
-   html_theme_options = {
 
-       # navbarのスタイルを指定します。
-       # 設定値：'fixed-top', 'full' (Default: 'fixed-top')
+Html theme options
+==================
+
+The following is a description of the options that can be specified in **html_theme_options** in conf.py.
+
+.. code-block:: python
+
+   html_theme_options = {
+       # Navbar style.
+       # Values: 'fixed-top', 'full' (Default: 'fixed-top')
        'navbar_style' : 'fixed-top',
 
-       # navbarの文字色のクラスを指定します。
-       # 設定値：'dark', 'light' (Default: 'dark')
+       # Navbar link color modifier class.
+       # Values: 'dark', 'light' (Default: 'dark')
        'navbar_color_class' : 'dark',
 
-       # navbarの背景色のクラスを指定します。
-       # 設定値：'inverse', 'primary', 'faded', 'success', 'info', 'warning', 'danger' (Default: 'inverse')
+       # Navbar background color class.
+       # Values: 'inverse', 'primary', 'faded', 'success',
+       #         'info', 'warning', 'danger' (Default: 'inverse')
        'navbar_bg_class' : 'inverse',
 
-       # navbarにドキュメントのtoctreeを表示するかどうか指定します。
-       # Trueの場合、ドロップダウンで4階層目まで表示します。
-       # Falseの場合、非表示になります。
-       # 設定値： True, False (Default: True)
+       # Show global TOC in navbar.
+       # To display up to 4 tier in the drop-down menu.
+       # Values: True, False (Default: True)
        'navbar_show_pages' : True,
 
-       # navbarに表示するtoctreeのメニュー名を指定します。
+       # Link name for global TOC in navbar.
        # (Default: 'Pages')
        'navbar_pages_title' : 'Pages',
 
-       # navbarに表示されるリンクメニューを設定します。
-       # 第一引数：メニュー名
-       # 第二引数：URL
-       # 第三引数；外部リンクの場合True、ドキュメントのURLの場合False
+       # Specify a list of menu in navbar.
+       # Tuples forms:
+       #  ('Name', 'external url or path of pages in the document', boolean)
+       # Third argument:
+       # True indicates an external link.
+       # False indicates path of pages in the document.
        'navbar_links' : [
             ('Home', 'index', False),
             ("Link", "http://example.com", True)
        ],
 
-       # サイドバー + ドキュメント表示部の合計の幅を指定します。
+       # Total width(%) of the document and the sidebar.
        # (Default: 80%)
        'main_width' : '80%',
 
-       # sidebarを表示するかどうか指定します。
-       # 設定値：True, Flase (Default: True)
+       # Render sidebar.
+       # Values: True, False (Default: True)
        'show_sidebar' : True,
 
-       # sidebarを右に表示します。
-       # Falseの場合、左に表示します。
-       # 設定値：True, False (Default: False)
+       # Render sidebar in the right of the document.
+       # Values：True, False (Default: False)
        'sidebar_right': False,
 
-       # sidebarを固定します。
-       # 設定値：True, False (Default: True)
+       # Fix sidebar.
+       # Values: True, False (Default: True)
        'sidebar_fixed': True,
 
-       # テーブルのヘッダーのスタイルのクラスを指定します。
-       # 設定値：'inverse', 'light', '' (Default: 'inverse')
+       # Html table header class.
+       # Values: 'inverse', 'light' (Deafult: 'inverse')
        'table_thead_class' : 'inverse'
    }
 

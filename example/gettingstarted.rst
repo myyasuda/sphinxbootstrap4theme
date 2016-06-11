@@ -20,61 +20,69 @@ Setting conf.py
    html_theme = 'sphinxbootstrap4theme'
    html_theme_path = [sphinxbootstrap4theme.get_path()]
 
+   # Html logo in navbar.
+   # Fit in the navbar at the height of image is 37 px.
+   html_logo = '_static/logo.jpg'
 
-html theme options
+
+Html theme options
 ==================
 
-conf.pyのhtml_theme_optionsに指定できるオプションの説明です。
+The following is a description of the options that can be specified in **html_theme_options** in conf.py.
 
 .. code-block:: python
 
    html_theme_options = {
-       # navbarのスタイルを指定します。
-       # 設定値：'fixed-top', 'full' (Default: 'fixed-top')
+       # Navbar style.
+       # Values: 'fixed-top', 'full' (Default: 'fixed-top')
        'navbar_style' : 'fixed-top',
 
-       # navbarの文字色のクラスを指定します。
-       # dark, light
+       # Navbar link color modifier class.
+       # Values: 'dark', 'light' (Default: 'dark')
        'navbar_color_class' : 'dark',
 
-       # navbarの背景色のクラスを指定します。
-       # inverse, primary, faded, success, info, warning, danger
+       # Navbar background color class.
+       # Values: 'inverse', 'primary', 'faded', 'success',
+       #         'info', 'warning', 'danger' (Default: 'inverse')
        'navbar_bg_class' : 'inverse',
 
-       # navbarにドキュメントのtoctreeを表示するかどうか指定します。
-       # Trueにした場合、ドロップダウンで4階層目まで表示します。
+       # Show global TOC in navbar.
+       # To display up to 4 tier in the drop-down menu.
+       # Values: True, False (Default: True)
        'navbar_show_pages' : True,
 
-       # navbarに表示するtoctreeのメニュー名を指定します。
+       # Link name for global TOC in navbar.
        # (Default: 'Pages')
        'navbar_pages_title' : 'Pages',
 
-       # navbarに表示されるリンクメニューを設定します。
-       # 第一引数：メニュー名
-       # 第二引数：URL
-       # 第三引数；外部リンクの場合True、ドキュメントのURLの場合False
+       # Specify a list of menu in navbar.
+       # Tuples forms:
+       #  ('Name', 'external url or path of pages in the document', boolean)
+       # Third argument:
+       # True indicates an external link.
+       # False indicates path of pages in the document.
        'navbar_links' : [
             ('Home', 'index', False),
             ("Link", "http://example.com", True)
        ],
 
-       # サイドバー + ドキュメント表示部の合計の幅を指定します。
+       # Total width(%) of the document and the sidebar.
        # (Default: 80%)
        'main_width' : '80%',
 
-       # sidebarを表示するかどうか指定します。
+       # Render sidebar.
+       # Values: True, False (Default: True)
        'show_sidebar' : True,
 
-       # sidebarを右に表示します。
-       # Falseの場合、左に表示します。
-       # 設定値：True, False (Default: False)
+       # Render sidebar in the right of the document.
+       # Values：True, False (Default: False)
        'sidebar_right': False,
 
-       # sidebarを固定します。
-       # 設定値：True, False (Default: True)
+       # Fix sidebar.
+       # Values: True, False (Default: True)
        'sidebar_fixed': True,
 
-       # テーブルのヘッダーのスタイルのクラスを指定します。
-       # 'inverse', 'light', ''
+       # Html table header class.
+       # Values: 'inverse', 'light' (Deafult: 'inverse')
        'table_thead_class' : 'inverse'
    }
