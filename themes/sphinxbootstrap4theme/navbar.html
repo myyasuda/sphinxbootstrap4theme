@@ -1,19 +1,20 @@
   <nav class="navbar navbar-{{ theme_navbar_style }} navbar-{{ theme_navbar_color_class }} bg-{{ theme_navbar_bg_class }}">
-      <a class="navbar-brand" href="{{ pathto(master_doc) }}">
-          {%- if logo %}
-          <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
-          {%- else %}
-              {{ project }}
+      <div class="row container-fluid">
+           <a class="navbar-brand" href="{{ pathto(master_doc) }}">
+              {%- if logo %}
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
+              {%- else %}
+                  {{ project }}
+              {%- endif %}
+          </a>
+          {%- if version %}
+          <span class="navbar-text pull-xs-left navbar-version"><b>{{version}}</b></span>
           {%- endif %}
-      </a>
-      {%- if version %}
-      <span class="navbar-text pull-xs-left navbar-version"><b>{{version}}</b></span>
-      {%- endif %}
-      <button class="navbar-toggler hidden-sm-up pull-xs-right bar-button" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-      &#9776;
-      </button>
-      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-          <ul class="nav navbar-nav">
+          <button class="navbar-toggler hidden-sm-up pull-xs-right bar-button" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+          &#9776;
+          </button>
+          <div class="hidden-xs-down">
+          <ul class="nav navbar-nav ">
           {% if theme_navbar_show_pages %}
               <li class="nav-item dropdown" id="navbar-pages">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{theme_navbar_pages_title}}</a>
@@ -30,11 +31,29 @@
                   <a  class="nav-link" href="{{ pathto(href) }}">{{ title }}</a>
               {%- endif -%}
               </li>
-              {%- endfor %}
+          {%- endfor %}
           </ul>
-          {% block navbarsearch %}
-            {% include "navbarsearch.html" %}
-          {% endblock %}
+             {% include "navbarsearch.html" %}
+          </div>
+      </div>
+
+      <div class="row hidden-sm-up">
+          <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
+              <ul class="nav navbar-nav">
+              {%- for title, href, isExternal in theme_navbar_links %}
+                  <li>
+                  {% if isExternal %}
+                      <a  class="nav-link" href="{{ href }}">{{ title }}</a>
+                  {%- else -%}
+                      <a  class="nav-link" href="{{ pathto(href) }}">{{ title }}</a>
+                  {%- endif -%}
+                  </li>
+              {%- endfor %}
+              </ul>
+              <div class="dropdown-divider"></div>
+              <div class="navbar-text">search<div>
+              {% include "navbarsearch.html" %}
+          </div>
       </div>
     </nav>
   </div>

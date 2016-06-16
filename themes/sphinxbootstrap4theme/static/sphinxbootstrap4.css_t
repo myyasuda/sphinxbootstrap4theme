@@ -23,9 +23,6 @@ a {
 }
 
 .main {
-    {% if theme_navbar_style != "full" %}
-    margin-top: 54px;
-    {% endif %}
     width: {{ theme_main_width }};
     margin-left: auto;
     margin-right: auto;
@@ -374,6 +371,9 @@ Breadcrumb styles
 */
 
 .related {
+    {% if theme_navbar_style != "full" %}
+    margin-top: 54px;
+    {% endif %}
     padding: .75rem 1rem;
     margin-bottom: 1rem;
 }
