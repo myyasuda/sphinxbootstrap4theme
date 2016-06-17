@@ -1,6 +1,6 @@
   <nav class="navbar navbar-{{ theme_navbar_style }} navbar-{{ theme_navbar_color_class }} bg-{{ theme_navbar_bg_class }}">
       <div class="row container-fluid">
-           <a class="navbar-brand" href="{{ pathto(master_doc) }}">
+           <a class="navbar-brand hidden-xs-down" href="{{ pathto(master_doc) }}">
               {%- if logo %}
               <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
               {%- else %}
@@ -8,7 +8,7 @@
               {%- endif %}
           </a>
           {%- if version %}
-          <span class="navbar-text pull-xs-left navbar-version"><b>{{version}}</b></span>
+          <span class="navbar-text pull-xs-left navbar-version hidden-xs-down"><b>{{version}}</b></span>
           {%- endif %}
           <button class="navbar-toggler hidden-sm-up pull-xs-right bar-button" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
           &#9776;
@@ -39,6 +39,15 @@
 
       <div class="row hidden-sm-up">
           <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
+              <div class="container">
+             　　 <a class="navbar-brand" href="{{ pathto(master_doc) }}">
+                  {%- if logo %}
+                      <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
+                  {%- else %}
+                      {{ project }}
+                  {%- endif %}
+                  </a>
+              </div>
               <ul class="nav navbar-nav">
               {%- for title, href, isExternal in theme_navbar_links %}
                   <li>
