@@ -489,3 +489,12 @@ Blockquote
 blockquote {
    padding-left: 1em;
 }
+
+@media (max-width: 47.9em) {
+  .main {
+      width: 100%;
+  }
+  div.documentwrapper{
+    padding: 0px 5px 0px 5px;
+  }
+}
