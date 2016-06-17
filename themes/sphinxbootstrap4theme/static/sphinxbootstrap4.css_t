@@ -378,6 +378,10 @@ Breadcrumb styles
     margin-bottom: 1rem;
 }
 
+.related a.btn {
+    z-index: 999;
+}
+
 .breadcrumb {
     padding: 6px 0px 0px 0px;
     margin: 0px;
