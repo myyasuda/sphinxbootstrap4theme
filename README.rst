@@ -2,7 +2,7 @@
     :target: https://travis-ci.org/myyasuda/sphinxbootstrap4theme
 
 =============================================
-Bootstrap v4.0.0alpha.2 HTML Theme for Sphinx
+Bootstrap v4 HTML Theme for Sphinx
 =============================================
 
 `Demo <http://myyasuda.github.io/sphinxbootstrap4theme>`_
@@ -103,7 +103,7 @@ The following is a description of the options that can be specified in **html_th
 
 - java 1.8
 - python 3.5.1
-- sphinx 1.4.1
+- sphinx 1.4.6
 
 テーマを配布用にパッケージング
 ------------------------------
@@ -147,6 +147,6 @@ TODO
 +--------------+---------------+-------------+-----------------------------------------------------+
 |サードパーティ|バージョン     |ライセンス   |URL                                                  |
 +==============+===============+=============+=====================================================+
-| Bootstrap    |v4.0.0-alpha.2 | MIT license |https://github.com/twbs/bootstrap/blob/master/LICENSE|
+| Bootstrap    |v4.0.0-alpha.3 | MIT license |https://github.com/twbs/bootstrap/blob/master/LICENSE|
 +--------------+---------------+-------------+-----------------------------------------------------+
 

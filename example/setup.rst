@@ -1,5 +1,5 @@
 ================
-Getting Started
+Set up
 ================
 
 Instllation
