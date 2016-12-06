@@ -101,7 +101,6 @@ The following is a description of the options that can be specified in **html_th
 
 以下のアプリケーションをインストールする必要があります。
 
-- java 1.8
 - python 3.5.2
 - sphinx 1.5
 
@@ -110,21 +109,21 @@ The following is a description of the options that can be specified in **html_th
 
 .. code-block:: bat
 
-   gradlew buildPackage
+   python setup.py sdist
 
 テーマをインストール
 ------------------------------
 
 .. code-block:: bat
 
-   gradlew installPackage
+   pip install dist/sphinxbootstrap4theme-${version}.zip
 
 PyPIにテーマを登録
 ------------------
 
 .. code-block:: bat
 
-   gradlew uploadPackage
+   python setup.py register sdist upload
 
 exampleのドキュメントのビルド
 -----------------------------
@@ -133,7 +132,7 @@ exampleのドキュメントのビルド
 
 .. code-block:: bat
 
-   gradlew example
+   sphinx-build -b html ./example ./example/_build -c ./example
 
 
 ライセンス

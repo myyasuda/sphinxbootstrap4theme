@@ -6,4 +6,4 @@ Developer's Tips
    :maxdepth: 1
 
    tools
-   gradle
+   commands
