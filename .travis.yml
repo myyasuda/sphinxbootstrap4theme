@@ -3,17 +3,11 @@ python:
     - "3.5"
 
 before_install:
-    - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
-    - chmod +x miniconda.sh
-    - "./miniconda.sh -b"
-    - export PATH=/home/travis/miniconda2/bin:$PATH
-    - conda update --yes conda
-    - sudo rm -rf /dev/shm
-    - sudo ln -s /run/shm /dev/shm
+    - python -m pip install --upgrade pip
 
 install:
-    - conda install --yes python="3.5" sphinx
-    - pip install --user travis-sphinx
+    - pip install -U Sphinx
+    - pip install -U travis-sphinx
 
 script:
     - travis-sphinx --source=example build
