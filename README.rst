@@ -102,8 +102,8 @@ The following is a description of the options that can be specified in **html_th
 以下のアプリケーションをインストールする必要があります。
 
 - java 1.8
-- python 3.5.1
-- sphinx 1.4.6
+- python 3.5.2
+- sphinx 1.5
 
 テーマを配布用にパッケージング
 ------------------------------
@@ -135,11 +135,6 @@ exampleのドキュメントのビルド
 
    gradlew example
 
-TODO
-----
-
-- サイドメニューのオンオフボタンの実装
-
 
 ライセンス
 ==========
@@ -147,6 +142,6 @@ TODO
 +--------------+---------------+-------------+-----------------------------------------------------+
 |サードパーティ|バージョン     |ライセンス   |URL                                                  |
 +==============+===============+=============+=====================================================+
-| Bootstrap    |v4.0.0-alpha.3 | MIT license |https://github.com/twbs/bootstrap/blob/master/LICENSE|
+| Bootstrap    |v4.0.0-alpha.5 | MIT license |https://github.com/twbs/bootstrap/blob/master/LICENSE|
 +--------------+---------------+-------------+-----------------------------------------------------+
 
