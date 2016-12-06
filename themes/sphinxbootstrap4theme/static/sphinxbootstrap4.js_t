@@ -19,7 +19,6 @@ function stickySidebar() {
         var documentBottom = $document.outerHeight(true) + topPadding;
         var sidebarHeight = $sidebarwrapper.height();
         var scrollTop = $window.scrollTop() + topPadding - sidebarTop;
-        console.log('scrollTop:' + scrollTop + '   sidebarTop:' + sidebarTop + '   documentBottom' + documentBottom + '   sidebarHeight:' + sidebarHeight);
 
         if (documentBottom < sidebarHeight + scrollTop) {
           $sidebarwrapper.css({'margin-top': documentBottom - sidebarHeight });
@@ -100,7 +99,7 @@ $(function() {
 
 
 {% if theme_sidebar_fixed %}
-$(window).load(function(){
+$(window).on('load', function(){
   stickySidebar()
 });
 {% endif %}
