@@ -4,7 +4,7 @@
 source_suffix = '.rst'
 master_doc = 'index'
 
-version = "0.4.4"
+version = "0.5.1"
 
 project = 'Bootstrap4 theme'
 copyright = '2016, Masahiko Yasuda'
@@ -14,7 +14,7 @@ language = 'en'
 
 # templates_path = ['_templates']
 
-# html_sidebars = {'**' : ['globaltoc.html']}
+# html_sidebars = {'**' : ['globaltoc.html', 'relations.html', 'searchbox.html', 'sourcelink.html']}
 
 html_theme = 'sphinxbootstrap4theme'
 
