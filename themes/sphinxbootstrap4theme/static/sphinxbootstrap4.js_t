@@ -4,30 +4,47 @@ function stickySidebar() {
     {% else %}
     var topPadding = 0;
     {% endif %}
+    var $sidebar = $('.sphinxsidebar');
     var $sidebarwrapper = $('.sphinxsidebarwrapper');
-    var $document = $('.document');
-    var sidebarTop = $sidebarwrapper.offset().top - parseInt($sidebarwrapper.css('margin-top'),10);
+    var $footer = $('footer');
     var $window = $(window);
-    var documentBottom = $document.outerHeight(true) + topPadding;
-    var sidebarHeight = $sidebarwrapper.height();
 
-    if ($document.outerHeight(true) + topPadding < $sidebarwrapper.height()) {
-        return;
-    }
+    var sidebarTop = $sidebar.offset().top;
+    var footerTop = $footer.offset().top
 
-    $window.scroll(function() {
-        var documentBottom = $document.outerHeight(true) + topPadding;
-        var sidebarHeight = $sidebarwrapper.height();
-        var scrollTop = $window.scrollTop() + topPadding - sidebarTop;
+    function adjust() {
+        var sidebarWidth = $sidebar.width();
+        var sidebarWrapperHeight = $sidebarwrapper.height();
+        var scrollTop = $window.scrollTop();
 
-        if (documentBottom < sidebarHeight + scrollTop) {
-          $sidebarwrapper.css({'margin-top': documentBottom - sidebarHeight });
-        } else if (scrollTop > 0) {
-          $sidebarwrapper.css({'margin-top': scrollTop});
+        if (scrollTop + topPadding <= sidebarTop) {
+          $sidebarwrapper.css({'top': 0, 'position': 'relative' });
         } else {
-          $sidebarwrapper.css({'margin-top': 0});
+          $sidebarwrapper.css({'top': topPadding, 'position': 'fixed', 'width': sidebarWidth });
         }
+
+        $sidebarwrapper.css({ 'max-height': footerTop - scrollTop - topPadding, 'overflow': 'auto' });
+    };
+
+    var scrollTimer;
+    $window.scroll(function() {
+        if (scrollTimer) { clearTimeout(scrollTimer); }
+
+        scrollTimer = setTimeout(function() {
+            adjust();
+        }, 1);
     });
+
+    var resizeTimer;
+    $window.on('resize', function() {
+        if (resizeTimer) { clearTimeout(resizeTimer); }
+
+        resizeTimer = setTimeout(function() {
+            adjust();
+        }, 1);
+    });
+
+    adjust();
 }
 
 function sidebarTreeView() {
@@ -95,11 +112,8 @@ $(function() {
     // download
     $("a.download").prepend('<div class="icon"><div class="download"></div></div>');
 
-});
+    {% if theme_sidebar_fixed %}
+    stickySidebar();
+    {% endif %}
 
-
-{% if theme_sidebar_fixed %}
-$(window).on('load', function(){
-  stickySidebar()
 });
-{% endif %}

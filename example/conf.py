@@ -25,7 +25,10 @@ html_theme_options = {
         ('Home', 'index', False),
         ("Link", "http://example.com", True),
         ("GitHub", "https://github.com/myyasuda/sphinxbootstrap4theme", True)
-    ]
+    ],
+    'sidebar_right': False,
+    'sidebar_fixed': True,
+    'navbar_style': 'fixed-top'
 }
 
 rst_prolog= u"""
