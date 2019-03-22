@@ -1,6 +1,5 @@
-  <nav class="navbar navbar-{{ theme_navbar_style }} navbar-{{ theme_navbar_color_class }} bg-{{ theme_navbar_bg_class }}">
-      <div class="row container-fluid">
-           <a class="navbar-brand hidden-xs-down" href="{{ pathto(master_doc) }}">
+  <nav class="navbar navbar-expand-{{ theme_navbar_collapse }}  {{ theme_navbar_style }} navbar-{{ theme_navbar_color_class }} bg-{{ theme_navbar_bg_class }} flex-wrap">
+           <a class="navbar-brand py-1" href="{{ pathto(master_doc) }}">
               {%- if logo %}
               <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="{{ project }}"/>
               {%- else %}
@@ -8,13 +7,12 @@
               {%- endif %}
           </a>
           {%- if version %}
-          <span class="navbar-text pull-xs-left navbar-version hidden-xs-down"><b>{{version}}</b></span>
+          <span class="navbar-text navbar-version pb-0 pt-1"><b>{{version}}</b></span>
           {%- endif %}
           <button class="navbar-toggler hidden-sm-up pull-xs-right bar-button" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
           &#9776;
           </button>
-          <div class="hidden-xs-down">
-          <ul class="nav navbar-nav ">
+          <ul class="navbar-nav mr-auto">
           {% if theme_navbar_show_pages %}
               <li class="nav-item dropdown" id="navbar-pages">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{theme_navbar_pages_title}}</a>
@@ -34,10 +32,9 @@
           {%- endfor %}
           </ul>
              {% include "navbarsearch.html" %}
-          </div>
       </div>
 
-      <div class="row hidden-sm-up">
+      <!--<div class="row hidden-sm-up">
           <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
               <div class="container">
              　　 <a class="navbar-brand" href="{{ pathto(master_doc) }}">
@@ -63,6 +60,6 @@
               <div class="navbar-text">search<div>
               {% include "navbarsearch.html" %}
           </div>
-      </div>
+      </div>-->
     </nav>
   </div>
