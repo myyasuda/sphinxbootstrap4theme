@@ -8,6 +8,11 @@ body {
     font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
 
+body div.body {
+    max-width: none;
+    min-width: auto;
+}
+
 /*
 a {
     color: rgb(85, 89, 92);
@@ -102,6 +107,15 @@ Navbar Class styles
     margin-top: -4px;
     height: 37px;
 }
+.navbar.navbar-dark span.navbar-version{ /* hide version in dark navbar */
+    color: #343a40;
+}
+.dropdown-toggle{
+    cursor: pointer;
+}
+.navbar-dark .navbar-toggler{
+    border-color: transparent;
+}
 
 /*
 Navbar Dropdown styles
@@ -186,6 +200,7 @@ div.sphinxsidebar {
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis; /* Safari */
     -o-text-overflow: ellipsis; /* Opera */
+    font-size: 100%!important;
 }
 
 div.sphinxsidebar > div.sphinxsidebarwrapper {
@@ -248,6 +263,24 @@ div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow.collapsed {
     right: .3em;
 }
 
+ul.nav ul{ /* sidebaartreeview no list styles */
+    list-style: none!important;
+}
+
+.nav-pills .nav-item+.nav-item {
+    margin-top: .2rem;
+}
+
+/* sidebar search form styles */
+div.sphinxsidebar #searchbox form input[type="text"]{
+    width: 100%;
+    float: none;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
 /*
 Footer styles
 */
@@ -255,12 +288,16 @@ Footer styles
 .footer {
     border-top: 1px solid rgb(236, 238, 239);
 	color: rgb(85, 89, 92);
-	padding: 10px 10px 10px 10px;
+	padding: 10px 18px;
 	margin-top: 20px;
 }
 
 .copyright {
     padding-top: 8px;
+}
+
+.footer .btn{ /* set margin because of flex-wrap */
+    margin-top: 8px;
 }
 
 /*
@@ -374,8 +411,9 @@ Breadcrumb styles
     {% if theme_navbar_style != "full" %}
     margin-top: 54px;
     {% endif %}
-    padding: .75rem 1rem;
+    padding: 0 1rem .75rem 1rem;
     margin-bottom: 1rem;
+    font-size: 100%!important;
 }
 
 .related a.btn {
@@ -383,9 +421,13 @@ Breadcrumb styles
 }
 
 .breadcrumb {
-    padding: 6px 0px 0px 0px;
+    padding: calc(.75rem + 6px) 0px 0px 0px;
     margin: 0px;
     background-color: inherit;
+}
+
+.related .btn-group{ /* set padding-top because of flex-wrap */
+    padding-top: .75rem;
 }
 
 /*
