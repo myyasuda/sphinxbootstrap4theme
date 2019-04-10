@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Developer’s Tips &#8212; Bootstrap4 theme  documentation</title>
+
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-4.3.1-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinxbootstrap4.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tools" href="tools.html" />
+    <link rel="prev" title="Examples" href="../examples.html" /> 
+  </head><body>
+  <nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark flex-wrap">
+    <button class="navbar-toggler ml-auto py-2" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+      &#9776;
+    </button>
+      <div class="navbar-collapse collapse" id="exCollapsingNavbar2">
+           <a class="navbar-brand py-1" href="../index.html">
+                  Bootstrap4 theme
+          </a>
+          <span class="navbar-text navbar-version pb-0 pt-1"><b>0.6.0</b></span>
+          <ul class="navbar-nav mr-auto">
+          
+              <li class="nav-item dropdown d-none d-sm-block" id="navbar-pages">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                  <ul class="dropdown-menu">
+                  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Set up</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#instllation">Instllation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#setting-conf-py">Setting conf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#html-theme-options">Html theme options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#tables">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#code-blocks">Code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#download-links">Download Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#admonitions">Admonitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer’s Tips</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">ビルド用のコマンド</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id2">テーマを配布用にパッケージング</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id3">テーマをインストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#pypi">PyPIにテーマを登録</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#example">exampleのドキュメントのビルド</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                  </ul>
+              </li>
+              <li class="nav-item">
+              <a  class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item">
+              
+                  <a  class="nav-link" href="http://example.com">Link</a></li>
+              <li class="nav-item">
+              
+                  <a  class="nav-link" href="https://github.com/myyasuda/sphinxbootstrap4theme">GitHub</a></li>
+          </ul>
+          <div class="dropdown-divider d-block d-sm-none mb-4"></div>
+             
+<form class="form-inline" action="../search.html" method="get">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <!--<div class="row hidden-sm-up">
+          <div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
+              <div class="container">
+             　　 <a class="navbar-brand" href="../index.html">
+                      Bootstrap4 theme
+                  </a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <li>
+                  <a  class="nav-link" href="../index.html">Home</a></li>
+                  <li>
+                  
+                      <a  class="nav-link" href="http://example.com">Link</a></li>
+                  <li>
+                  
+                      <a  class="nav-link" href="https://github.com/myyasuda/sphinxbootstrap4theme">GitHub</a></li>
+              </ul>
+              <div class="dropdown-divider"></div>
+              <div class="navbar-text">search<div>
+              
+<form class="form-inline" action="../search.html" method="get">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          </div>
+      </div>-->
+    </nav>
+  </div>
+
+    <div class="related d-flex justify-content-between bg-light flex-wrap" role="navigation" aria-label="related navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Bootstrap4 theme  documentation</a></li>
+            <li class="breadcrumb-item active">Developer’s Tips</li>
+        </ol>
+       <div>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="../examples.html" title="Previous Chapter: Examples" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Examples
+               </a>
+               <a href="tools.html" title="Next Chapter: Tools" class="btn btn-primary" role="botton" accesskey="N">
+                   Tools &raquo;
+               </a>
+           </div>
+       </div>
+    </div>
+
+  <div class="main container-fluid">
+    <div class="row"> 
+      <div class="sphinxsidebar d-none d-md-block">
+        <div class="sphinxsidebarwrapper">          
+            <h4>Table Of Contents</h4>
+            
+            
+              <div class="sidebartoctree">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Set up</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#instllation">Instllation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#setting-conf-py">Setting conf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html#html-theme-options">Html theme options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#tables">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#code-blocks">Code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#download-links">Download Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#admonitions">Admonitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer’s Tips</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">ビルド用のコマンド</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id2">テーマを配布用にパッケージング</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id3">テーマをインストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#pypi">PyPIにテーマを登録</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#example">exampleのドキュメントのビルド</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            
+          
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../examples.html"
+                        title="previous chapter">Examples</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tools.html"
+                        title="next chapter">Tools</a></p>
+<div id="searchbox" style="display: none">
+    <form class="form search" action="../search.html" method="get">
+      <input type="text" name="q" class="form-control" placeholder="Search..." />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+  <ul class="this-page-menu list-unstyled text-right">
+    <li><a href="../_sources/dev/index.rst.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div> 
+
+      <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="developer-s-tips">
+<h1>Developer’s Tips<a class="headerlink" href="#developer-s-tips" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">ビルド用のコマンド</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+      </div>
+    </div>
+<footer class="footer d-flex justify-content-between flex-wrap">
+    <div class="copyright">
+        <div>&copy; Copyright 2016, Masahiko Yasuda.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.0.1 using <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a> 0.6.0.</div>
+    </div>
+    <div>
+        <a href="#" class="btn btn-primary btn-sm" role="botton">Back to top</a>
+    </div>
+</footer>
+  </body>
+</html>
