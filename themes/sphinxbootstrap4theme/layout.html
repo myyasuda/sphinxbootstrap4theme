@@ -24,11 +24,11 @@
     ] + css_files %}
 {% endif %}
 
-{% set script_files = script_files + [
-    '_static/bootstrap-4.3.1-dist/js/bootstrap.min.js',
-    '_static/sphinxbootstrap4.js'
-  ]
-%}
+{%- block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ pathto('_static/bootstrap-4.3.1-dist/js/bootstrap.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/sphinxbootstrap4.js', 1) }}"></script>
+{%- endblock %}
 
 {%- macro sphinxsidebar() %}
       {%- if render_sidebar %}
