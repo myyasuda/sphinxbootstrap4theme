@@ -7,19 +7,22 @@
     {{ super() }}
 {% endblock %}
 
-{% if theme_bootswatch != 'None' %}
-    {% set css_files = css_files + [
-        '_static/bootswatch-4.3.1-dist/' + theme_bootswatch + '/bootstrap.min.css'
-    ] %}
-{% else %}
-    {% set css_files = css_files + [
-        '_static/bootstrap-4.3.1-dist/css/bootstrap.min.css'
-    ] %}
-{% endif %}
+{# Ideally we want the default css first, then bootstrap followed by any custom css
+   This way the custom css can override any bootstrap formatting if needed #}
 
-{% set css_files = css_files + [
+{% set css_files = [
     '_static/sphinxbootstrap4.css'
-] %}
+] + css_files %}
+
+{% if theme_bootswatch != 'None' %}
+    {% set css_files = [
+        '_static/bootswatch-4.3.1-dist/' + theme_bootswatch + '/bootstrap.min.css'
+    ] + css_files %}
+{% else %}
+    {% set css_files = [
+        '_static/bootstrap-4.3.1-dist/css/bootstrap.min.css'
+    ] + css_files %}
+{% endif %}
 
 {% set script_files = script_files + [
     '_static/bootstrap-4.3.1-dist/js/bootstrap.min.js',
