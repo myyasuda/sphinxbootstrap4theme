@@ -7,8 +7,17 @@
     {{ super() }}
 {% endblock %}
 
+{% if theme_bootswatch != 'None' %}
+    {% set css_files = css_files + [
+        '_static/bootswatch-4.3.1-dist/' + theme_bootswatch + '/bootstrap.min.css'
+    ] %}
+{% else %}
+    {% set css_files = css_files + [
+        '_static/bootstrap-4.3.1-dist/css/bootstrap.min.css'
+    ] %}
+{% endif %}
+
 {% set css_files = css_files + [
-    '_static/bootstrap-4.3.1-dist/css/bootstrap.min.css',
     '_static/sphinxbootstrap4.css'
 ] %}
 
