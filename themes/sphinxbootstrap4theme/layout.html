@@ -14,7 +14,7 @@
     '_static/sphinxbootstrap4.css'
 ] + css_files %}
 
-{% if theme_bootswatch != 'None' %}
+{% if theme_bootswatch %}
     {% set css_files = [
         '_static/bootswatch-4.3.1-dist/' + theme_bootswatch + '/bootstrap.min.css'
     ] + css_files %}
@@ -40,6 +40,16 @@
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
             {%- endfor %}
+
+            {% if theme_extra_nav_links %}
+            <hr />
+            <ul>
+                {% for text, uri in theme_extra_nav_links.items() %}
+                <li class="toctree-l1"><a href="{{ uri }}">{{ text }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
           {%- else %}
             {#- old style sidebars: using blocks -- should be deprecated #}
             {%- block sidebartoc %}
