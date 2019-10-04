@@ -154,7 +154,7 @@ Navbar Dropdown styles
     background-color: rgb(255,255,255);
     display: block;
     top: 0px;
-    left:101%;
+    left:100%;
     width: 100%;
 }
 #navbar-pages > ul > li:hover > ul > li,

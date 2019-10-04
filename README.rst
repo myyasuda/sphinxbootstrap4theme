@@ -90,6 +90,17 @@ The following is a description of the options that can be specified in **html_th
        # Html table header class.
        # Values: 'inverse', 'light' (Deafult: 'inverse')
        'table_thead_class' : 'inverse'
+
+       # Additional navigation links on the sidebar
+       'extra_nav_links': {'Page index':'/genindex.html'},
+
+       # Use one of the color themes from bootswatch.
+       # https://bootswatch.com/
+       # Values: 'None', 'cerulean', 'cosmo', 'cyborg', 'darkly', 'flatly', 'journal',
+       #         'litera', 'lumen', 'lux', 'materia', 'minty', 'pulse', 'sandstone', 'simplex',
+       #          'sketchy', 'slate', 'solar', 'spacelab', 'superhero', 'united', 'yeti'
+       #          (Default: 'None')
+       'bootswatch' : 'None'
    }
 
 

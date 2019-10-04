@@ -1,0 +1,9 @@
+{# Allow for CSS on the local toc #}
+{%- if display_toc %}
+  <div class="local-toc-heading">
+  <h3><a href="{{ pathto(master_doc) }}">{{ _('Table of Contents') }}</a></h3>
+  </div>
+  <div class="local-toc">
+  {{ toc }}
+  </div>
+{%- endif %}
